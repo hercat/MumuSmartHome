@@ -1,0 +1,9 @@
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Mumu.Frameworks.Utility.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Mumu.Frameworks.Utility.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\log4net.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\obj\Debug\Mumu.Frameworks.Utility.csprojResolveAssemblyReference.cache
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\obj\Debug\Mumu.Frameworks.Utility.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\obj\Debug\Mumu.Frameworks.Utility.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Mumu.Frameworks.Entity.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Mumu.Frameworks.Entity.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\ThoughtWorks.QRCode.dll

@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MumuSmartHomeWebPortal", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mumu.Frameworks.WebInterfaces", "Mumu.Frameworks.WebInterfaces\Mumu.Frameworks.WebInterfaces.csproj", "{030E238A-0BB8-42FE-8002-2B57128C37E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{D15DE02E-E9B2-492E-9DC9-C7E0C304B84E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{030E238A-0BB8-42FE-8002-2B57128C37E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{030E238A-0BB8-42FE-8002-2B57128C37E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{030E238A-0BB8-42FE-8002-2B57128C37E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D15DE02E-E9B2-492E-9DC9-C7E0C304B84E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D15DE02E-E9B2-492E-9DC9-C7E0C304B84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D15DE02E-E9B2-492E-9DC9-C7E0C304B84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D15DE02E-E9B2-492E-9DC9-C7E0C304B84E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +99,6 @@ Global
 		{388D5E7A-F23E-41A8-BF02-ADBDC42FA19B} = {BE82DBF1-E472-4A85-9CCB-6B0B10CEE035}
 		{0B20043A-35CD-4859-8119-B8C8E4542FD3} = {4FAECBDA-E94D-4844-904B-D10B3A1B4650}
 		{030E238A-0BB8-42FE-8002-2B57128C37E0} = {DE02B410-3A04-430C-9AE1-49F9512B9023}
+		{D15DE02E-E9B2-492E-9DC9-C7E0C304B84E} = {4FAECBDA-E94D-4844-904B-D10B3A1B4650}
 	EndGlobalSection
 EndGlobal

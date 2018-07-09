@@ -1,0 +1,4 @@
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\bin\Debug\Mumu.Frameworks.DatabaseInterface.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\bin\Debug\Mumu.Frameworks.DatabaseInterface.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\obj\Debug\Mumu.Frameworks.DatabaseInterface.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\obj\Debug\Mumu.Frameworks.DatabaseInterface.pdb

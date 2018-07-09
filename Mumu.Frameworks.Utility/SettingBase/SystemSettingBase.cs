@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using Mumu.Frameworks.Entity;
 
 namespace Mumu.Frameworks.Utility
 {
@@ -44,6 +45,13 @@ namespace Mumu.Frameworks.Utility
                 }
             }
             return _instance;
+        }
+
+        private MysqlSettingBase _sysMySqlDB = new MysqlSettingBase();
+        public MysqlSettingBase SysMySqlDB
+        {
+            get { return _sysMySqlDB; }
+            set { this._sysMySqlDB = value; }
         }
     }
 }

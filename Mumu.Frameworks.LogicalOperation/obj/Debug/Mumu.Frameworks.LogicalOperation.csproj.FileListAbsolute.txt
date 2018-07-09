@@ -1,0 +1,13 @@
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\Mumu.Frameworks.LogicalOperation.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\Mumu.Frameworks.LogicalOperation.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\log4net.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\Mumu.Frameworks.DatabaseInterface.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\Mumu.Frameworks.Entity.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\Mumu.Frameworks.Utility.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\Mumu.Frameworks.DatabaseInterface.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\Mumu.Frameworks.Entity.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\Mumu.Frameworks.Utility.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\obj\Debug\Mumu.Frameworks.LogicalOperation.csprojResolveAssemblyReference.cache
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\obj\Debug\Mumu.Frameworks.LogicalOperation.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\obj\Debug\Mumu.Frameworks.LogicalOperation.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\ThoughtWorks.QRCode.dll
