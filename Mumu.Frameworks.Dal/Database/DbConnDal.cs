@@ -10,7 +10,9 @@ using System.Data;
 namespace Mumu.Frameworks.Dal
 {
     /// <summary>
-    /// Description:
+    /// Description:数据库连接数据访问层
+    /// Author:WUWEI
+    /// Date:2018/07/09
     /// </summary>
     public class DbConnDal : IDbConn
     {
