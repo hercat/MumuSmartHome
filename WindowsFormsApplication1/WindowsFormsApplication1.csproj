@@ -104,6 +104,7 @@
     <Content Include="images\logo%28128x128%29.png" />
     <Content Include="images\logo%2832x32%29.png" />
     <Content Include="images\logo%2864x64%29.png" />
+    <Content Include="log4net.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
