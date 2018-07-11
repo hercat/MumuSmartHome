@@ -4,7 +4,7 @@
   <FormatVersion>1.0.0.0</FormatVersion>
   <SysMySqlDB>
     <Server>localhost</Server>
-    <DataBase>test</DataBase>
+    <DataBase>MumuSmartHomeDB</DataBase>
     <Uid>root</Uid>
     <Password>jianglin</Password>
     <Charset>utf8</Charset>

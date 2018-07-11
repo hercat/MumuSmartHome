@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             SystemSettingBase.CreateInstance().SysMySqlDB.Server = "localhost";
-            SystemSettingBase.CreateInstance().SysMySqlDB.DataBase = "test";
+            SystemSettingBase.CreateInstance().SysMySqlDB.DataBase = "MumuSmartHomeDB";
             SystemSettingBase.CreateInstance().SysMySqlDB.Charset = "utf8";
             SystemSettingBase.CreateInstance().SysMySqlDB.Uid = "root";
             SystemSettingBase.CreateInstance().SysMySqlDB.Password = "jianglin";
@@ -209,6 +209,42 @@ namespace WindowsFormsApplication1
         {
 
         }
-        
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            GroupInfo info = new GroupInfo()
+            {
+                id = Guid.NewGuid(),
+                name = "默认组",
+                description = "默认组",
+                updatetime = DateTime.Now,
+                status = 1
+            };
+            GroupInfo info2 = GroupOperation.GetGroupInfoByName("默认组");
+            bool ret = false;
+            if (null == info2)
+                ret = GroupOperation.AddOrUpdateGroupInfo(info, EnumAddOrUpdate.Add);
+            else
+                MessageBox.Show(string.Format("{0}已存在！", "默认组"));
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            GroupInfo info = new GroupInfo()
+            {
+                id = new Guid("4ae75530-a9a4-4f0a-ae4c-5f35d009b611"),
+                name = "默认组",
+                description = "所有用户若未被分配组均属于默认组",
+                updatetime = DateTime.Now,
+                status = 1
+            };
+            bool ret = GroupOperation.AddOrUpdateGroupInfo(info, EnumAddOrUpdate.Update);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Guid id = new Guid("1e143ba4-7805-46ce-a123-95cb850795ac");
+            bool ret = GroupOperation.DeleteGroupInfo(id);
+        }
     }
 }

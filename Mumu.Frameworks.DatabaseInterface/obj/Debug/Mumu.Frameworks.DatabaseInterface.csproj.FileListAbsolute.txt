@@ -2,3 +2,6 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Databas
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\bin\Debug\Mumu.Frameworks.DatabaseInterface.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\obj\Debug\Mumu.Frameworks.DatabaseInterface.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\obj\Debug\Mumu.Frameworks.DatabaseInterface.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\bin\Debug\Mumu.Frameworks.Entity.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\bin\Debug\Mumu.Frameworks.Entity.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.DatabaseInterface\obj\Debug\Mumu.Frameworks.DatabaseInterface.csprojResolveAssemblyReference.cache

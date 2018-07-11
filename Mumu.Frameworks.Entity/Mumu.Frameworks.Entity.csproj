@@ -42,12 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnString\ConnString.cs" />
-    <Compile Include="MysqlSettingBase.cs" />
+    <Compile Include="EnumItems.cs" />
+    <Compile Include="GroupPermission\GroupPermission.cs" />
+    <Compile Include="Group\GroupInfo.cs" />
+    <Compile Include="Permission\PermissionInfo.cs" />
+    <Compile Include="RolePermission\RolePermission.cs" />
+    <Compile Include="Role\RoleInfo.cs" />
+    <Compile Include="SettingBase\MysqlSettingBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserGroup\UserGroup.cs" />
+    <Compile Include="UserLogin\UserLogin.cs" />
+    <Compile Include="UserPermission\UserPermission.cs" />
+    <Compile Include="UserRole\UserRole.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SettingBase\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

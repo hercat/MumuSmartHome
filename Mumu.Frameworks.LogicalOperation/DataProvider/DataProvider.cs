@@ -31,7 +31,7 @@ namespace Mumu.Frameworks.LogicalOperation
                     string dllname, assname;
                     if (!AppConfigManager.GetDataProvider(dpname, out dllname, out assname))
                     {
-                        log.Error(string.Format("AppConfigManager字典中未能找到{0}配置信息！", dpname));
+                        log.Error(string.Format("AppConfigManager数据提供对象字典中未能找到{0}配置信息！", dpname));
                     }
                     _dbConnDP = (IDbConn)Assembly.Load(assname).CreateInstance(dllname);
                 }
@@ -39,5 +39,27 @@ namespace Mumu.Frameworks.LogicalOperation
             }
         }
         #endregion
+
+        #region 用户组数据提供对象
+        private static IGroup _dbGroupDP;
+        public static IGroup DbGroupDP
+        {
+            get
+            {
+                if (_dbGroupDP == null)
+                {
+                    string dpname = "DbGroupDP";
+                    string dllname, assname;
+                    if (!AppConfigManager.GetDataProvider(dpname, out dllname, out assname))
+                    {
+                        log.Error(string.Format("AppConfigManager数据提供对象字典中未能找到{0}配置信息！", dpname));
+                    }
+                    _dbGroupDP = (IGroup)Assembly.Load(assname).CreateInstance(dllname);
+                }
+                return _dbGroupDP;
+            }
+        }
+        #endregion
+
     }
 }

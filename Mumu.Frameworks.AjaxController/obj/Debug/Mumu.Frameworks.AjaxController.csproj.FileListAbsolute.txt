@@ -1,0 +1,7 @@
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\bin\Debug\Mumu.Frameworks.AjaxController.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\bin\Debug\Mumu.Frameworks.AjaxController.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\bin\Debug\log4net.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\bin\Debug\MyMVC.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\obj\Debug\Mumu.Frameworks.AjaxController.csprojResolveAssemblyReference.cache
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\obj\Debug\Mumu.Frameworks.AjaxController.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\obj\Debug\Mumu.Frameworks.AjaxController.pdb

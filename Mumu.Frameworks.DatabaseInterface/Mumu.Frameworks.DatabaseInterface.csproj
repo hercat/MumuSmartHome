@@ -42,7 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\IDbConn.cs" />
+    <Compile Include="Group\IGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Mumu.Frameworks.Entity\Mumu.Frameworks.Entity.csproj">
+      <Project>{db6c4235-7f12-4a12-a1f8-a579983d5161}</Project>
+      <Name>Mumu.Frameworks.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

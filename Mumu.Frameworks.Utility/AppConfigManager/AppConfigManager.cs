@@ -25,6 +25,7 @@ namespace Mumu.Frameworks.Utility
                 {
                     _dicDataProvider = new Dictionary<string, string>();
                     _dicDataProvider.Add("DbConnDP", "Mumu.Frameworks.Dal.DbConnDal");
+                    _dicDataProvider.Add("DbGroupDP", "Mumu.Frameworks.Dal.GroupDal");
                 }
                 return _dicDataProvider;
             }
