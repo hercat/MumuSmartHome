@@ -212,15 +212,16 @@ namespace WindowsFormsApplication1
 
         private void button10_Click(object sender, EventArgs e)
         {
+            string name = "内部人员";
             GroupInfo info = new GroupInfo()
             {
                 id = Guid.NewGuid(),
-                name = "默认组",
-                description = "默认组",
+                name = name,
+                description = name,
                 updatetime = DateTime.Now,
                 status = 1
             };
-            GroupInfo info2 = GroupOperation.GetGroupInfoByName("默认组");
+            GroupInfo info2 = GroupOperation.GetGroupInfoByName(name);
             bool ret = false;
             if (null == info2)
                 ret = GroupOperation.AddOrUpdateGroupInfo(info, EnumAddOrUpdate.Add);
@@ -245,6 +246,12 @@ namespace WindowsFormsApplication1
         {
             Guid id = new Guid("1e143ba4-7805-46ce-a123-95cb850795ac");
             bool ret = GroupOperation.DeleteGroupInfo(id);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            List<GroupInfo> list = new List<GroupInfo>();
+            list = GroupOperation.GetGroupInfoPageList("*", string.Empty, 1, 2);
         }
     }
 }

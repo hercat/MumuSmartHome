@@ -87,5 +87,34 @@ namespace Mumu.Frameworks.Dal
             }
             return info;
         }
+
+        public List<GroupInfo> GetGroupInfoPageList(IDbCommand icmd, string fileds, string whereCondition, int startIndex, int pageSize)
+        {
+            icmd.Parameters.Clear();
+            MySqlCommand cmd = icmd as MySqlCommand;
+            cmd.CommandType = CommandType.Text;
+            StringBuilder sb = new StringBuilder();
+            if (!string.IsNullOrEmpty(fileds))
+                sb.AppendFormat("select {0} from t_group_info ", fileds);
+            if (!string.IsNullOrEmpty(whereCondition))
+                sb.AppendFormat("{0} ", whereCondition);
+            sb.AppendFormat("limit {0},{1}", startIndex, pageSize);
+            cmd.CommandText = sb.ToString();
+            List<GroupInfo> list = new List<GroupInfo>();
+            DataTable dt = new DataTable();
+            dt.Load(cmd.ExecuteReader());
+            if (dt.Rows.Count > 0)
+            {
+                GroupInfo info = null;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    info = new GroupInfo();
+                    info.AllParse(dr);
+                    if (null != info)
+                        list.Add(info);
+                }
+            }
+            return list;
+        }
     }
 }

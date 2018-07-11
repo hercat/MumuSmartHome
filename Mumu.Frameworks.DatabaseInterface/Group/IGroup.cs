@@ -14,5 +14,6 @@ namespace Mumu.Frameworks.DatabaseInterface
         bool DeleteGroupInfo(IDbCommand idbcmd, Guid id);
         GroupInfo GetGroupInfoByName(IDbCommand idbcmd, string name);
         GroupInfo GetGroupInfoById(IDbCommand idbcmd, Guid id);
+        List<GroupInfo> GetGroupInfoPageList(IDbCommand idbcmd, string fileds, string whereCondition, int startIndex, int pageSize);
     }
 }

@@ -150,6 +150,7 @@ namespace Mumu.Frameworks.LogicalOperation
             {
                 if (trans != null)
                     trans.Rollback();
+                log.Error(string.Format("GetGroupInfoById()出错,错误信息如下:{0}", ex.Message));
             }
             finally
             {
@@ -157,6 +158,44 @@ namespace Mumu.Frameworks.LogicalOperation
                     conn.Close();
             }
             return info;
+        }
+        /// <summary>
+        /// 用户组信息分页获取
+        /// </summary>
+        /// <param name="fields"></param>
+        /// <param name="whereCondition"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        public static List<GroupInfo> GetGroupInfoPageList(string fields, string whereCondition, int startIndex, int pageSize)
+        {
+            List<GroupInfo> list = new List<GroupInfo>();
+            IDbConnection conn = null;
+            IDbCommand cmd = null;
+            IDbTransaction trans = null;
+            try
+            {
+                IGroup dp = DataProvider.DbGroupDP;
+                conn = DbConnOperation.CreateMySqlConnection();
+                cmd = conn.CreateCommand();
+                conn.Open();
+                trans = conn.BeginTransaction();
+                cmd.Transaction = trans;
+                list = dp.GetGroupInfoPageList(cmd, fields, whereCondition, startIndex, pageSize);
+                trans.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (trans != null)
+                    trans.Rollback();
+                log.Error(string.Format("GetGroupInfoPageList()出错,错误信息如下:{0}", ex.Message));
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Close();
+            }
+            return list;
         }
     }
 }
