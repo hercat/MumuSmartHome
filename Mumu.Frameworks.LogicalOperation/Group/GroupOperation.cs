@@ -162,10 +162,10 @@ namespace Mumu.Frameworks.LogicalOperation
         /// <summary>
         /// 用户组信息分页获取
         /// </summary>
-        /// <param name="fields"></param>
-        /// <param name="whereCondition"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="pageSize"></param>
+        /// <param name="fields">字段</param>
+        /// <param name="whereCondition">where条件</param>
+        /// <param name="startIndex">开始下标</param>
+        /// <param name="pageSize">页面大小</param>
         /// <returns></returns>
         public static List<GroupInfo> GetGroupInfoPageList(string fields, string whereCondition, int startIndex, int pageSize)
         {
