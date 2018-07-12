@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 namespace Mumu.Frameworks.Dal
 {
     public class PermissionDal : IPermission
+
     {
         public bool AddOrUpdatePermission(IDbCommand icmd, PermissionInfo info, EnumAddOrUpdate mode)
         {

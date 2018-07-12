@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Database\DbConnDal.cs" />
     <Compile Include="Group\GroupDal.cs" />
+    <Compile Include="Permission\PermissionDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

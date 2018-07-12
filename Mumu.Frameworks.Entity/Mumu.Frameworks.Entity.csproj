@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnString\ConnString.cs" />
-    <Compile Include="EnumItems.cs" />
+    <Compile Include="EnumItems\EnumItems.cs" />
     <Compile Include="GroupPermission\GroupPermission.cs" />
     <Compile Include="Group\GroupInfo.cs" />
     <Compile Include="Permission\PermissionInfo.cs" />
