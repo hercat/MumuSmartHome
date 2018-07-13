@@ -15,6 +15,8 @@ using System.Drawing.Imaging;
 using System.Web;
 using System.Net;
 using System.IO;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace WindowsFormsApplication1
 {
@@ -37,6 +39,10 @@ namespace WindowsFormsApplication1
             SystemSettingBase.CreateInstance().SysMySqlDB.Charset = "utf8";
             SystemSettingBase.CreateInstance().SysMySqlDB.Uid = "root";
             SystemSettingBase.CreateInstance().SysMySqlDB.Password = "jianglin";
+
+            SystemSettingBase.CreateInstance().SysMongoDB.Server = "localhost";
+            SystemSettingBase.CreateInstance().SysMongoDB.Port = "27017";
+            SystemSettingBase.CreateInstance().SysMongoDB.Database = "SmartHome";
             SystemSettingBase.CreateInstance().Save();
         }
         /// <summary>
@@ -252,6 +258,27 @@ namespace WindowsFormsApplication1
         {
             List<GroupInfo> list = new List<GroupInfo>();
             list = GroupOperation.GetGroupInfoPageList("*", string.Empty, 1, 2);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var client = new MongoClient("mongodb://localhost:27017");
+                var database = client.GetDatabase("smarthome");
+                var collection = database.GetCollection<BsonDocument>("group");
+                var group = new BsonDocument();
+                group.Add("gid", new Guid("4ae75530-a9a4-4f0a-ae4c-5f35d009b611"));
+                group.Add("name", "默认组");
+                group.Add("description", "所有用户若未被分配组均属于默认组");
+                group.Add("updatetime", DateTime.Now);
+                group.Add("status", 1);
+                collection.InsertOneAsync(group);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

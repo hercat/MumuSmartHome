@@ -20,3 +20,9 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\ThoughtWorks.QRCode.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\MongoDB.Bson.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\MongoDB.Driver.Core.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\MongoDB.Driver.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\MongoDB.Driver.GridFS.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MongodbForm.resources

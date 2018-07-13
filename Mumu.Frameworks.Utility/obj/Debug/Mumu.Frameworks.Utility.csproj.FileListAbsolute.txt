@@ -7,3 +7,8 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Mumu.Frameworks.Entity.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Mumu.Frameworks.Entity.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\ThoughtWorks.QRCode.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\MongoDB.Bson.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\MongoDB.Driver.Core.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\MongoDB.Driver.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\MongoDB.Driver.GridFS.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\MongoDB.Driver.Legacy.dll

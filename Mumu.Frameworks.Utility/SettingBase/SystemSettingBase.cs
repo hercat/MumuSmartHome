@@ -53,5 +53,12 @@ namespace Mumu.Frameworks.Utility
             get { return _sysMySqlDB; }
             set { this._sysMySqlDB = value; }
         }
+
+        private MongodbSettingBase _sysMongodb = new MongodbSettingBase();
+        public MongodbSettingBase SysMongoDB
+        {
+            get { return _sysMongodb; }
+            set { this._sysMongodb = value; }
+        }
     }
 }

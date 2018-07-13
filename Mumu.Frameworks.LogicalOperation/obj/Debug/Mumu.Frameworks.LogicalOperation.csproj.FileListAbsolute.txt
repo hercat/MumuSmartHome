@@ -11,3 +11,6 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Logical
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\obj\Debug\Mumu.Frameworks.LogicalOperation.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\obj\Debug\Mumu.Frameworks.LogicalOperation.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\ThoughtWorks.QRCode.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\MongoDB.Driver.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\MongoDB.Driver.Core.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.LogicalOperation\bin\Debug\MongoDB.Bson.dll

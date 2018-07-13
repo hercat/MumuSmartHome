@@ -9,4 +9,9 @@
     <Password>jianglin</Password>
     <Charset>utf8</Charset>
   </SysMySqlDB>
+  <SysMongoDB>
+    <Server>localhost</Server>
+    <Port>27017</Port>
+    <Database>smarthome</Database>
+  </SysMongoDB>
 </SystemSettingBase>

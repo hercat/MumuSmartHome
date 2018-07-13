@@ -83,5 +83,18 @@ namespace Mumu.Frameworks.Entity
                 this._database = value;
             }
         }
+
+        public string ConnString
+        {
+            get
+            {
+                StringBuilder sb = new StringBuilder();
+                if (!string.IsNullOrEmpty(Server))
+                    sb.AppendFormat("mongodb://{0}", Server);
+                if (!string.IsNullOrEmpty(Port))
+                    sb.AppendFormat(":{0}", Port);
+                return sb.ToString();
+            }
+        }
     }
 }
