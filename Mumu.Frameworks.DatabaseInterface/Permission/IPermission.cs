@@ -11,5 +11,6 @@ namespace Mumu.Frameworks.DatabaseInterface
     public interface IPermission
     {
         bool AddOrUpdatePermission(IDbCommand idbcmd, PermissionInfo info, EnumAddOrUpdate mode);
+        bool DeletePermissionInfo(IDbCommand idbcmd, Guid id);
     }
 }

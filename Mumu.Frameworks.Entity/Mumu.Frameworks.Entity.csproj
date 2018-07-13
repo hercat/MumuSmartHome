@@ -45,6 +45,7 @@
     <Compile Include="EnumItems\EnumItems.cs" />
     <Compile Include="GroupPermission\GroupPermission.cs" />
     <Compile Include="Group\GroupInfo.cs" />
+    <Compile Include="SettingBase\MongodbSettingBase.cs" />
     <Compile Include="Permission\PermissionInfo.cs" />
     <Compile Include="RolePermission\RolePermission.cs" />
     <Compile Include="Role\RoleInfo.cs" />

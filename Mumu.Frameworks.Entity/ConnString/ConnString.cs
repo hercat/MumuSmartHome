@@ -9,5 +9,6 @@ namespace Mumu.Frameworks.Entity
     public class ConnString
     {
         public static string MySqldb { get; set; }
+        public static string Mongodb { get; set; }
     }
 }

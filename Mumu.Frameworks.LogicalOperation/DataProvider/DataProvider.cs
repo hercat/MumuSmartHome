@@ -61,5 +61,26 @@ namespace Mumu.Frameworks.LogicalOperation
         }
         #endregion
 
+        #region 权限数据提供对象
+        private static IPermission _dbPermissionDP;
+        public static IPermission DbPermissionDP
+        {
+            get
+            {
+                if (_dbPermissionDP == null)
+                {
+                    string dpname = "DbPermissionDP";
+                    string dllname, assname;
+                    if (!AppConfigManager.GetDataProvider(dpname, out dllname, out assname))
+                    {
+                        log.Error(string.Format("AppConfigManager数据提供对象字典中未能找到{0}配置信息！", dpname));
+                    }
+                    _dbPermissionDP = (IPermission)Assembly.Load(assname).CreateInstance(dllname);
+                }
+                return _dbPermissionDP;
+            }
+        }
+        #endregion
+
     }
 }

@@ -33,5 +33,17 @@ namespace Mumu.Frameworks.Dal
             cmd.ExecuteNonQuery();
             return true;
         }
+
+        public bool DeletePermissionInfo(IDbCommand icmd, Guid id)
+        {
+            icmd.Parameters.Clear();
+            MySqlCommand cmd = icmd as MySqlCommand;
+            cmd.CommandType = CommandType.Text;
+            string sql = @"delete from t_permission_info
+                        where id = '{0}'";
+            cmd.CommandText = string.Format(sql, id);
+            cmd.ExecuteNonQuery();
+            return true;
+        }
     }
 }
