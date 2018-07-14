@@ -40,7 +40,7 @@ namespace WindowsFormsApplication1
             SystemSettingBase.CreateInstance().SysMySqlDB.Uid = "root";
             SystemSettingBase.CreateInstance().SysMySqlDB.Password = "jianglin";
 
-            SystemSettingBase.CreateInstance().SysMongoDB.Server = "localhost";
+            SystemSettingBase.CreateInstance().SysMongoDB.Server = "192.168.224.128";
             SystemSettingBase.CreateInstance().SysMongoDB.Port = "27017";
             SystemSettingBase.CreateInstance().SysMongoDB.Database = "SmartHome";
             SystemSettingBase.CreateInstance().Save();

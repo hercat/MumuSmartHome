@@ -10,8 +10,8 @@
     <Charset>utf8</Charset>
   </SysMySqlDB>
   <SysMongoDB>
-    <Server>localhost</Server>
+    <Server>192.168.224.128</Server>
     <Port>27017</Port>
-    <Database>smarthome</Database>
+    <Database>SmartHome</Database>
   </SysMongoDB>
 </SystemSettingBase>

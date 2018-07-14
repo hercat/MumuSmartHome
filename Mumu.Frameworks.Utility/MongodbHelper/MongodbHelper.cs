@@ -172,5 +172,8 @@ namespace Mumu.Frameworks.Utility
             collection.InsertManyAsync(list);
         }
         #endregion
+
+
+
     }
 }
