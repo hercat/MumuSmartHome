@@ -173,7 +173,59 @@ namespace Mumu.Frameworks.Utility
         }
         #endregion
 
+        #region GetFirstOrDefaultDocument
+        public TDocument GetFirstOrDefaultDocument<TDocument>(string connString, string dbname, string name)
+        {
+            var client = new MongoClient(connString);
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<TDocument>(name);
+            var document = collection.Find(new BsonDocument()).FirstOrDefault();
+            return document;
+        }
 
+        public TDocument GetFirstOrDefaultDocument<TDocument>(MongoClient client, string dbname, string name)
+        {
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<TDocument>(name);
+            var document = collection.Find(new BsonDocument()).FirstOrDefault();
+            return document;
+        }
 
+        public TDocument GetFirstOrDefaultDocument<TDocument>(IMongoDatabase database, string name)
+        {
+            var collection = database.GetCollection<TDocument>(name);
+            var document = collection.Find(new BsonDocument()).FirstOrDefault();
+            return document;
+        }
+        #endregion
+
+        #region GetFirstOrDefaultDocumentAsync
+        public TDocument GetFirstOrDefaultDocumentAsync<TDocument>(string connString, string dbname, string name)
+        {
+            var client = new MongoClient(connString);
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<TDocument>(name);
+            var task = collection.Find(new BsonDocument()).FirstOrDefaultAsync();
+            var document = task.Result;
+            return document;
+        }
+
+        public TDocument GetFirstOrDefaultDocumentAsync<TDocument>(MongoClient client, string dbname, string name)
+        {
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<TDocument>(name);
+            var task = collection.Find(new BsonDocument()).FirstOrDefaultAsync();
+            var document = task.Result;
+            return document;
+        }
+
+        public TDocument GetFirstOrDefaultDocumentAsync<TDocument>(IMongoDatabase database, string name)
+        {
+            var collection = database.GetCollection<TDocument>(name);
+            var task = collection.Find(new BsonDocument()).FirstOrDefaultAsync();
+            var document = task.Result;
+            return document;
+        }
+        #endregion
     }
 }

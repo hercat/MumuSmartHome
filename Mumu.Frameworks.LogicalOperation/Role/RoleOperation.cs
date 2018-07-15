@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using log4net;
-using System.Reflection;
 using Mumu.Frameworks.Entity;
 using Mumu.Frameworks.DatabaseInterface;
-using Mumu.Frameworks.Utility;
+using log4net;
 using System.Data;
+using System.Reflection;
 
 namespace Mumu.Frameworks.LogicalOperation
 {
-    public class PermissionOperation
+    public class RoleOperation
     {
         private readonly static ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         /// <summary>
-        /// 新增或修改权限信息
+        /// 新增或更新角色信息
         /// </summary>
-        /// <param name="info">权限</param>
-        /// <param name="mode">新增或修改</param>
+        /// <param name="info"></param>
+        /// <param name="mode"></param>
         /// <returns></returns>
-        public static bool AddOrUpdatePermission(PermissionInfo info, EnumAddOrUpdate mode)
+        public bool AddOrUpdateRoleInfo(RoleInfo info, EnumAddOrUpdate mode)
         {
             bool ret = false;
             IDbConnection conn = null;
@@ -29,20 +28,20 @@ namespace Mumu.Frameworks.LogicalOperation
             IDbTransaction trans = null;
             try
             {
-                IPermission dp = DataProvider.DbPermissionDP;
+                IRole dp = DataProvider.DbRoleDP;
                 conn = DbConnOperation.CreateMySqlConnection();
                 cmd = conn.CreateCommand();
                 conn.Open();
                 trans = conn.BeginTransaction();
                 cmd.Transaction = trans;
-                ret = dp.AddOrUpdatePermission(cmd, info, mode);
+                ret = dp.AddOrUpdateRoleInfo(cmd, info, mode);
                 trans.Commit();
             }
             catch (Exception ex)
             {
                 if (trans != null)
                     trans.Rollback();
-                log.Error(string.Format("AddOrUpdatePermission()出错,错误信息如下:{0}", ex.Message));
+                log.Error(string.Format("AddOrUpdateRoleInfo()出错,错误信息如下:{0}", ex.Message));
             }
             finally
             {
@@ -52,11 +51,11 @@ namespace Mumu.Frameworks.LogicalOperation
             return ret;
         }
         /// <summary>
-        /// 根据id删除权限信息
+        /// 根据id删除角色信息
         /// </summary>
         /// <param name="id">编号</param>
         /// <returns></returns>
-        public static bool DeletePermissionInfo(Guid id)
+        public bool DeleteRoleInfo(Guid id)
         {
             bool ret = false;
             IDbConnection conn = null;
@@ -64,20 +63,20 @@ namespace Mumu.Frameworks.LogicalOperation
             IDbTransaction trans = null;
             try
             {
-                IPermission dp = DataProvider.DbPermissionDP;
+                IRole dp = DataProvider.DbRoleDP;
                 conn = DbConnOperation.CreateMySqlConnection();
                 cmd = conn.CreateCommand();
                 conn.Open();
                 trans = conn.BeginTransaction();
                 cmd.Transaction = trans;
-                ret = dp.DeletePermissionInfo(cmd, id);
+                ret = dp.DeleteRoleInfo(cmd, id);
                 trans.Commit();
             }
             catch (Exception ex)
             {
                 if (trans != null)
                     trans.Rollback();
-                log.Error(string.Format("DeletePermissionInfo()出错,错误信息如下:{0}", ex.Message));
+                log.Error(string.Format("DeleteRoleInfo()出错,错误信息如下:{0}", ex.Message));
             }
             finally
             {
@@ -87,32 +86,32 @@ namespace Mumu.Frameworks.LogicalOperation
             return ret;
         }
         /// <summary>
-        /// 根据name删除权限信息
+        /// 根据name获取角色信息
         /// </summary>
-        /// <param name="name">权限名</param>
+        /// <param name="name">name</param>
         /// <returns></returns>
-        public static PermissionInfo GetPermissionInfoByName(string name)
+        public RoleInfo GetRoleInfoByName(string name)
         {
-            PermissionInfo info = null;
+            RoleInfo info = null;
             IDbConnection conn = null;
             IDbCommand cmd = null;
             IDbTransaction trans = null;
             try
             {
-                IPermission dp = DataProvider.DbPermissionDP;
+                IRole dp = DataProvider.DbRoleDP;
                 conn = DbConnOperation.CreateMySqlConnection();
                 cmd = conn.CreateCommand();
                 conn.Open();
                 trans = conn.BeginTransaction();
                 cmd.Transaction = trans;
-                info = dp.GetPermissionInfoByName(cmd, name);
+                info = dp.GetRoleInfoByName(cmd, name);
                 trans.Commit();
             }
             catch (Exception ex)
             {
                 if (trans != null)
                     trans.Rollback();
-                log.Error(string.Format("GetPermissionInfoByName()出错,错误信息如下:{0}", ex.Message));
+                log.Error(string.Format("GetRoleInfoByName()出错,错误信息如下:{0}", ex.Message));
             }
             finally
             {
@@ -122,32 +121,32 @@ namespace Mumu.Frameworks.LogicalOperation
             return info;
         }
         /// <summary>
-        /// 根据id获取权限信息
+        /// 根据id获取角色信息
         /// </summary>
-        /// <param name="id">编号</param>
+        /// <param name="id">id</param>
         /// <returns></returns>
-        public PermissionInfo GetPermissionInfoById(Guid id)
+        public RoleInfo GetRoleInfoById(Guid id)
         {
-            PermissionInfo info = null;
+            RoleInfo info = null;
             IDbConnection conn = null;
             IDbCommand cmd = null;
             IDbTransaction trans = null;
             try
             {
-                IPermission dp = DataProvider.DbPermissionDP;
+                IRole dp = DataProvider.DbRoleDP;
                 conn = DbConnOperation.CreateMySqlConnection();
                 cmd = conn.CreateCommand();
                 conn.Open();
                 trans = conn.BeginTransaction();
                 cmd.Transaction = trans;
-                info = dp.GetPermissionInfoById(cmd, id);
+                info = dp.GetRoleInfoById(cmd, id);
                 trans.Commit();
             }
             catch (Exception ex)
             {
                 if (trans != null)
                     trans.Rollback();
-                log.Error(string.Format("GetPermissionInfoById()出错,错误信息如下:{0}", ex.Message));
+                log.Error(string.Format("GetRoleInfoById()出错,错误信息如下:{0}", ex.Message));
             }
             finally
             {
@@ -157,35 +156,34 @@ namespace Mumu.Frameworks.LogicalOperation
             return info;
         }
         /// <summary>
-        /// 获取权限列表
+        /// 获取角色列表
         /// </summary>
         /// <param name="fields"></param>
         /// <param name="whereCondition"></param>
         /// <param name="startIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public List<PermissionInfo> GetPermissionInfoPageList(string fields, string whereCondition, int startIndex, int pageSize)
+        public List<RoleInfo> GetRoleInfoPageList(string fields, string whereCondition, int startIndex, int pageSize)
         {
-            List<PermissionInfo> list = new List<PermissionInfo>();
+            List<RoleInfo> list = new List<RoleInfo>();
             IDbConnection conn = null;
             IDbCommand cmd = null;
             IDbTransaction trans = null;
             try
             {
-                IPermission dp = DataProvider.DbPermissionDP;
+                IRole dp = DataProvider.DbRoleDP;
                 conn = DbConnOperation.CreateMySqlConnection();
                 cmd = conn.CreateCommand();
-                conn.Open();
                 trans = conn.BeginTransaction();
                 cmd.Transaction = trans;
-                list = dp.GetPermissionInfoPageList(cmd, fields, whereCondition, startIndex, pageSize);
+                list = dp.GetRoleInfoPageList(cmd, fields, whereCondition, startIndex, pageSize);
                 trans.Commit();
             }
             catch (Exception ex)
             {
                 if (trans != null)
                     trans.Rollback();
-                log.Error(string.Format("GetPermissionInfoPageList()出错,错误信息如下:{0}", ex.Message));
+                log.Error(string.Format("GetRoleInfoPageList()出错,错误信息如下:{0}", ex.Message));
             }
             finally
             {

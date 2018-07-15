@@ -12,5 +12,8 @@ namespace Mumu.Frameworks.DatabaseInterface
     {
         bool AddOrUpdatePermission(IDbCommand idbcmd, PermissionInfo info, EnumAddOrUpdate mode);
         bool DeletePermissionInfo(IDbCommand idbcmd, Guid id);
+        PermissionInfo GetPermissionInfoByName(IDbCommand idbcmd, string name);
+        PermissionInfo GetPermissionInfoById(IDbCommand idbcmd, Guid id);
+        List<PermissionInfo> GetPermissionInfoPageList(IDbCommand idbcmd, string fields, string whereCondition, int startIndex, int pageSize);
     }
 }

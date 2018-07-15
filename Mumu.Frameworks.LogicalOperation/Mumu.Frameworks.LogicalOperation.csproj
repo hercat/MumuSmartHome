@@ -49,6 +49,8 @@
     <Compile Include="Group\GroupOperation.cs" />
     <Compile Include="Permission\PermissionOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role\RoleOperation.cs" />
+    <Compile Include="UserLogin\UserLoginOperation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mumu.Frameworks.DatabaseInterface\Mumu.Frameworks.DatabaseInterface.csproj">

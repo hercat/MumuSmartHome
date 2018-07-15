@@ -82,5 +82,47 @@ namespace Mumu.Frameworks.LogicalOperation
         }
         #endregion
 
+        #region 角色数据提供对象
+        private static IRole _dbRoleDP;
+        public static IRole DbRoleDP
+        {
+            get
+            {
+                if (_dbRoleDP == null)
+                {
+                    string dpname = "DbRoleDP";
+                    string dllname, assname;
+                    if (!AppConfigManager.GetDataProvider(dpname, out dllname, out assname))
+                    {
+                        log.Error(string.Format("AppConfigManager数据提供对象字典中未能找到{0}配置信息！", dpname));
+                    }
+                    _dbRoleDP = (IRole)Assembly.Load(assname).CreateInstance(dllname);
+                }
+                return _dbRoleDP;
+            }
+        }
+        #endregion
+
+        #region 用户登录数据提供对象
+        private static IUserLogin _dbUserLoginDP;
+        public static IUserLogin DbUserLoginDP
+        {
+            get
+            {
+                if (_dbUserLoginDP == null)
+                {
+                    string dpname = "DbUserLoginDP";
+                    string dllname, assname;
+                    if (!AppConfigManager.GetDataProvider(dpname, out dllname, out assname))
+                    {
+                        log.Error(string.Format("AppConfigManager数据提供对象字典中未能找到{0}配置信息！", dpname));
+                    }
+                    _dbUserLoginDP = (IUserLogin)Assembly.Load(assname).CreateInstance(dllname);
+                }
+                return _dbUserLoginDP;
+            }
+        }
+        #endregion
+
     }
 }

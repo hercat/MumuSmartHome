@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Database\IDbConn.cs" />
     <Compile Include="Group\IGroup.cs" />
+    <Compile Include="UserLogin\IUserLogin.cs" />
+    <Compile Include="Role\IRole.cs" />
     <Compile Include="Permission\IPermission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

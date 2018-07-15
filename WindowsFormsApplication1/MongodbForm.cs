@@ -111,5 +111,20 @@ namespace WindowsFormsApplication1
             //    }
             //}
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var client = new MongoClient(SystemSettingBase.CreateInstance().SysMongoDB.ConnString);
+            var database = client.GetDatabase(SystemSettingBase.CreateInstance().SysMongoDB.Database);
+            var collection = database.GetCollection<BsonDocument>("Sensors");
+            //var count = collection.CountDocuments(new BsonDocument());
+            //var count = collection.CountDocumentsAsync(new BsonDocument());
+            //long result = count.Result;
+            //var document = collection.Find(new BsonDocument()).FirstOrDefault();
+            //var document = collection.Find(new BsonDocument()).FirstOrDefaultAsync();
+            //var result = document.Result;
+            var filter = Builders<BsonDocument>.Filter.Eq("name", "温湿度传感器2") | Builders<BsonDocument>.Filter.Eq("sn", "ISB0010112");
+            var document = collection.Find(filter).ToList();
+        }
     }
 }
