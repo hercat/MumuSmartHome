@@ -33,5 +33,56 @@ namespace Mumu.Frameworks.Dal
             cmd.ExecuteNonQuery();
             return true;
         }
+
+        public bool DeleteUserLoginInfo(IDbCommand icmd, Guid id)
+        {
+            icmd.Parameters.Clear();
+            MySqlCommand cmd = icmd as MySqlCommand;
+            cmd.CommandType = CommandType.Text;
+            string sql = @"delete from t_user_login where id = '{0}'";
+            cmd.CommandText = string.Format(sql, id);
+            cmd.ExecuteNonQuery();
+            return true;
+        }
+
+        public UserLogin GetUserLoginInfoByName(IDbCommand icmd, string name)
+        {
+            icmd.Parameters.Clear();
+            MySqlCommand cmd = icmd as MySqlCommand;
+            cmd.CommandType = CommandType.Text;
+            string sql = @"select id,login_name,password,cellphone,email,last_login_ip,last_login_time,create_user_id,createtime,is_authentication,prop1,prop2,prop3,status
+                            from t_user_login
+                            where name = '{0}'";
+            cmd.CommandText = string.Format(sql, name);
+            DataTable dt = new DataTable();
+            UserLogin info = null;
+            dt.Load(cmd.ExecuteReader());
+            if (dt.Rows.Count > 0)
+            {
+                info = new UserLogin();
+                info.AllParse(dt.Rows[0]);
+            }
+            return info;
+        }
+
+        public UserLogin GetUserLoginInfoById(IDbCommand icmd, Guid id)
+        {
+            icmd.Parameters.Clear();
+            MySqlCommand cmd = icmd as MySqlCommand;
+            cmd.CommandType = CommandType.Text;
+            string sql = @"select id,login_name,password,cellphone,email,last_login_ip,last_login_time,create_user_id,createtime,is_authentication,prop1,prop2,prop3,status
+                            from t_user_login
+                            where id = '{0}'";
+            cmd.CommandText = string.Format(sql, id);
+            DataTable dt = new DataTable();
+            UserLogin info = null;
+            dt.Load(cmd.ExecuteReader());
+            if (dt.Rows.Count > 0)
+            {
+                info = new UserLogin();
+                info.AllParse(dt.Rows[0]);
+            }
+            return info;
+        }
     }
 }
