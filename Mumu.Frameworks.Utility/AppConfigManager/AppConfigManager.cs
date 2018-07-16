@@ -33,6 +33,7 @@ namespace Mumu.Frameworks.Utility
                     _dicDataProvider.Add("DbRolePermissionDP", "Mumu.Frameworks.Dal.RolePermissionDal");
                     _dicDataProvider.Add("DbUserGroupDP", "Mumu.Frameworks.Dal.UserGroupDal");
                     _dicDataProvider.Add("DbUserPermissionDP", "Mumu.Frameworks.Dal.UserPermissionDal");
+                    _dicDataProvider.Add("DbUserRoleDP", "Mumu.Frameworks.Dal.UserRoleDal");
                 }
                 return _dicDataProvider;
             }
