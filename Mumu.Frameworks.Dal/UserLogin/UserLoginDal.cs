@@ -84,5 +84,34 @@ namespace Mumu.Frameworks.Dal
             }
             return info;
         }
+
+        public List<UserLogin> GetUserLoginInfoPageList(IDbCommand icmd, string fields, string whereCondition, int startIndex, int pageSize)
+        {
+            icmd.Parameters.Clear();
+            MySqlCommand cmd = icmd as MySqlCommand;
+            cmd.CommandType = CommandType.Text;
+            StringBuilder sb = new StringBuilder();
+            if (!string.IsNullOrEmpty(fields))
+                sb.AppendFormat("select {0} from t_user_login ", fields);
+            if (!string.IsNullOrEmpty(whereCondition))
+                sb.AppendFormat("{0} ", whereCondition);
+            sb.AppendFormat("limit {0},{1}", startIndex, pageSize);
+            cmd.CommandText = sb.ToString();
+            DataTable dt = new DataTable();
+            List<UserLogin> list = new List<UserLogin>();
+            dt.Load(cmd.ExecuteReader());
+            if (dt.Rows.Count > 0)
+            {
+                UserLogin info = null;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    info = new UserLogin();
+                    info.AllParse(dr);
+                    if (info != null)
+                        list.Add(info);
+                }
+            }
+            return list;
+        }
     }
 }

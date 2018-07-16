@@ -11,6 +11,9 @@ namespace Mumu.Frameworks.DatabaseInterface
     public interface IUserLogin
     {
         bool AddOrUpdateUserLoginInfo(IDbCommand idbcmd, UserLogin info, EnumAddOrUpdate mode);
-        bool DeleteUserLoginInfo(IDbCommand idbcmd, Guid id);        
+        bool DeleteUserLoginInfo(IDbCommand idbcmd, Guid id);
+        UserLogin GetUserLoginInfoByName(IDbCommand idbcmd, string name);
+        UserLogin GetUserLoginInfoById(IDbCommand idbcmd, Guid id);
+        List<UserLogin> GetUserLoginInfoPageList(IDbCommand idbcmd, string fields, string whereCondition, int startIndex, int pageSize)
     }
 }

@@ -27,8 +27,12 @@ namespace Mumu.Frameworks.Utility
                     _dicDataProvider.Add("DbConnDP", "Mumu.Frameworks.Dal.DbConnDal");
                     _dicDataProvider.Add("DbGroupDP", "Mumu.Frameworks.Dal.GroupDal");
                     _dicDataProvider.Add("DbPermissionDP", "Mumu.Frameworks.Dal.PermissionDal");
-                    _dicDataProvider.Add("DbRoleDP", "Mumu.Frameworks.Dal.IRole");
-                    _dicDataProvider.Add("DbUserLoginDP", "Mumu.Frameworks.Dal.IUserLogin");
+                    _dicDataProvider.Add("DbRoleDP", "Mumu.Frameworks.Dal.RoleDal");
+                    _dicDataProvider.Add("DbUserLoginDP", "Mumu.Frameworks.Dal.UserLoginDal");
+                    _dicDataProvider.Add("DbGroupPermissionDP", "Mumu.Frameworks.Dal.GroupPermissionDal");
+                    _dicDataProvider.Add("DbRolePermissionDP", "Mumu.Frameworks.Dal.RolePermissionDal");
+                    _dicDataProvider.Add("DbUserGroupDP", "Mumu.Frameworks.Dal.UserGroupDal");
+                    _dicDataProvider.Add("DbUserPermissionDP", "Mumu.Frameworks.Dal.UserPermissionDal");
                 }
                 return _dicDataProvider;
             }

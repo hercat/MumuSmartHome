@@ -124,5 +124,89 @@ namespace Mumu.Frameworks.LogicalOperation
         }
         #endregion
 
+        #region 用户组权限数据提供对象
+        private static IGroupPermission _dbGroupPermissionDP;
+        public static IGroupPermission DbGroupPermissionDP
+        {
+            get
+            {
+                if (_dbGroupPermissionDP == null)
+                {
+                    string dpname = "DbGroupPermissionDP";
+                    string dllname, assname;
+                    if (!AppConfigManager.GetDataProvider(dpname, out dllname, out assname))
+                    {
+                        log.Error(string.Format("AppConfigManager数据提供对象字典中未能找到{0}配置信息！", dpname));
+                    }
+                    _dbGroupPermissionDP = (IGroupPermission)Assembly.Load(assname).CreateInstance(dllname);
+                }
+                return _dbGroupPermissionDP;
+            }
+        }
+        #endregion
+
+        #region 角色权限数据提供对象
+        private static IRolePermission _dbRolePermissionDP;
+        public static IRolePermission DbRolePermissionDP
+        {
+            get
+            {
+                if (_dbRolePermissionDP == null)
+                {
+                    string dpname = "DbRolePermissionDP";
+                    string dllname, assname;
+                    if (!AppConfigManager.GetDataProvider(dpname, out dllname, out assname))
+                    {
+                        log.Error(string.Format("AppConfigManager数据提供对象字典中未能找到{0}配置信息！", dpname));
+                    }
+                    _dbRolePermissionDP = (IRolePermission)Assembly.Load(assname).CreateInstance(dllname);
+                }
+                return _dbRolePermissionDP;
+            }
+        }
+        #endregion
+
+        #region 用户分组数据提供对象
+        private static IUserGroup _dbUserGroupDP;
+        public static IUserGroup DbUserGroupDP
+        {
+            get
+            {
+                if (_dbUserGroupDP == null)
+                {
+                    string dpname = "DbUserGroupDP";
+                    string dllname, assname;
+                    if (!AppConfigManager.GetDataProvider(dpname, out dllname, out assname))
+                    {
+                        log.Error(string.Format("AppConfigManager数据提供对象字典中未能找到{0}配置信息！", dpname));
+                    }
+                    _dbUserGroupDP = (IUserGroup)Assembly.Load(assname).CreateInstance(dllname);
+                }
+                return _dbUserGroupDP;
+            }
+        }
+        #endregion
+
+        #region 用户权限数提供对象
+        private static IUserPermission _dbUserPermissionDP;
+        public static IUserPermission DbUserPermissionDP
+        {
+            get
+            {
+                if (_dbUserPermissionDP == null)
+                {
+                    string dpname = "DbUserPermissionDP";
+                    string assname, dllname;
+                    if (!AppConfigManager.GetDataProvider(dpname, out dllname, out assname))
+                    {
+                        log.Error(string.Format("AppConfigManager数据提供对象字典中未能找到{0}配置信息！", dpname));
+                    }
+                    _dbUserPermissionDP = (IUserPermission)Assembly.Load(assname).CreateInstance(dllname);
+                }
+                return _dbUserPermissionDP;
+            }
+        }
+        #endregion
+
     }
 }
