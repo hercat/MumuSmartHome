@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE7A526D-4114-4016-885E-26B23D1CDCAC}</ProjectGuid>
+    <ProjectGuid>{CBD498D3-C20F-4926-B63D-5254956D40B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mumu.Frameworks.AjaxController</RootNamespace>
-    <AssemblyName>Mumu.Frameworks.AjaxController</AssemblyName>
+    <RootNamespace>Mumu.Frameworks.Bizprocess</RootNamespace>
+    <AssemblyName>Mumu.Frameworks.Bizprocess</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,12 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\Library\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="MyMVC">
-      <HintPath>..\Library\MyMVC.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,14 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ajax\AjaxTest.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mumu.Frameworks.Bizprocess\Mumu.Frameworks.Bizprocess.csproj">
-      <Project>{cbd498d3-c20f-4926-b63d-5254956d40b3}</Project>
-      <Name>Mumu.Frameworks.Bizprocess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Mumu.Frameworks.Dal\Mumu.Frameworks.Dal.csproj">
       <Project>{727728fb-e2f1-4472-9f16-13b40b616229}</Project>
       <Name>Mumu.Frameworks.Dal</Name>
@@ -66,10 +56,6 @@
     <ProjectReference Include="..\Mumu.Frameworks.LogicalOperation\Mumu.Frameworks.LogicalOperation.csproj">
       <Project>{5046262f-52d9-4a7d-b0a4-0233d7af76fc}</Project>
       <Name>Mumu.Frameworks.LogicalOperation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Mumu.Frameworks.Utility\Mumu.Frameworks.Utility.csproj">
-      <Project>{388d5e7a-f23e-41a8-bf02-adbdc42fa19b}</Project>
-      <Name>Mumu.Frameworks.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
