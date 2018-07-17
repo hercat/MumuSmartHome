@@ -12,6 +12,7 @@ namespace Mumu.Frameworks.DatabaseInterface
     {
         bool AddOrUpdateUserGroupInfo(IDbCommand idbcmd, UserGroup info, EnumAddOrUpdate mode);
         bool DeleteUserGroupInfo(IDbCommand idbcmd, Guid id);
-        UserGroup GetUserGroupById()
+        UserGroup GetUserGroupById(IDbCommand idbcmd, Guid id);
+        List<UserGroup> GetUserGroupByUid(IDbCommand idbcmd, Guid uid);
     }
 }

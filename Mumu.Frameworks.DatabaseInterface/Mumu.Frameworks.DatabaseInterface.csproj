@@ -43,6 +43,11 @@
   <ItemGroup>
     <Compile Include="Database\IDbConn.cs" />
     <Compile Include="Group\IGroup.cs" />
+    <Compile Include="GroupPermission\IGroupPermission.cs" />
+    <Compile Include="UserRole\IUserRole.cs" />
+    <Compile Include="UserPermission\IUserPermission.cs" />
+    <Compile Include="UserGroup\IUserGroup.cs" />
+    <Compile Include="RolePermission\IRolePermission.cs" />
     <Compile Include="UserLogin\IUserLogin.cs" />
     <Compile Include="Role\IRole.cs" />
     <Compile Include="Permission\IPermission.cs" />

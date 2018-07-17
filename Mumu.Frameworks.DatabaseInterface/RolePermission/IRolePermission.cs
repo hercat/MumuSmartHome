@@ -13,5 +13,6 @@ namespace Mumu.Frameworks.DatabaseInterface
         bool AddOrUpdateRolePermissionInfo(IDbCommand idbcmd, RolePermission info, EnumAddOrUpdate mode);
         bool DeleteRolePermissionInfo(IDbCommand idbcmd, Guid id);
         RolePermission GetRolePermissionById(IDbCommand idbcmd, Guid id);
+        List<RolePermission> GetRolePermissionByRid(IDbCommand idbcmd, Guid rid);
     }
 }

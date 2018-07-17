@@ -11,5 +11,8 @@ namespace Mumu.Frameworks.DatabaseInterface
     public interface IUserRole
     {
         bool AddOrUpdateUserRoleInfo(IDbCommand idbcmd, UserRole info, EnumAddOrUpdate mode);
+        bool DeleteUserRoleInfo(IDbCommand idbcmd, Guid id);
+        UserRole GetUserRoleInfoById(IDbCommand idbcmd, Guid id);
+        List<UserRole> GetUserRoleByUid(IDbCommand idbcmd, Guid uid);
     }
 }

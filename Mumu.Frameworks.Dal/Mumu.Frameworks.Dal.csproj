@@ -49,11 +49,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DbConnDal.cs" />
+    <Compile Include="GroupPermission\GroupPermissionDal.cs" />
     <Compile Include="Group\GroupDal.cs" />
     <Compile Include="Permission\PermissionDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolePermission\RolePermissionDal.cs" />
     <Compile Include="Role\RoleDal.cs" />
+    <Compile Include="UserGroup\UserGroupDal.cs" />
     <Compile Include="UserLogin\UserLoginDal.cs" />
+    <Compile Include="UserPermission\UserPermissionDal.cs" />
+    <Compile Include="UserRole\UserRoleDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mumu.Frameworks.DatabaseInterface\Mumu.Frameworks.DatabaseInterface.csproj">

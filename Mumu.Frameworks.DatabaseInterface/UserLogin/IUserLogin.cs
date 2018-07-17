@@ -14,6 +14,6 @@ namespace Mumu.Frameworks.DatabaseInterface
         bool DeleteUserLoginInfo(IDbCommand idbcmd, Guid id);
         UserLogin GetUserLoginInfoByName(IDbCommand idbcmd, string name);
         UserLogin GetUserLoginInfoById(IDbCommand idbcmd, Guid id);
-        List<UserLogin> GetUserLoginInfoPageList(IDbCommand idbcmd, string fields, string whereCondition, int startIndex, int pageSize)
+        List<UserLogin> GetUserLoginInfoPageList(IDbCommand idbcmd, string fields, string whereCondition, int startIndex, int pageSize);
     }
 }
