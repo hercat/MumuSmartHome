@@ -19,3 +19,5 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\obj\Debug\MumuSmartHomeWebPortal.csprojResolveAssemblyReference.cache
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\obj\Debug\MumuSmartHomeWebPortal.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\obj\Debug\MumuSmartHomeWebPortal.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.AjaxController.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.AjaxController.pdb

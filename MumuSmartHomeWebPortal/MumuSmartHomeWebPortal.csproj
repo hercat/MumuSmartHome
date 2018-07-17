@@ -77,6 +77,7 @@
     <Content Include="bootstrap-3.3.7\js\bootstrap.js" />
     <Content Include="bootstrap-3.3.7\js\bootstrap.min.js" />
     <Content Include="bootstrap-3.3.7\js\npm.js" />
+    <Content Include="css\test.css" />
     <Content Include="Highcharts-6.1.1\code\css\highcharts.css" />
     <Content Include="Highcharts-6.1.1\code\css\themes\dark-unica.css" />
     <Content Include="Highcharts-6.1.1\code\css\themes\grid-light.css" />
@@ -1346,6 +1347,7 @@
     <Content Include="jquery-easyui-1.5.5.2\themes\mobile.css" />
     <Content Include="jquery\jquery-1.9.0.js" />
     <Content Include="jquery\jquery-3.3.1.min.js" />
+    <Content Include="js\test.js" />
     <Content Include="log4net.xml" />
     <Content Include="packages.config" />
     <Content Include="jquery-easyui-1.5.5.2\themes\material-teal\images\Thumbs.db" />
@@ -1455,12 +1457,8 @@
     <Content Include="Highcharts-6.1.1\code\themes\sand-signika.js.map" />
     <Content Include="Highcharts-6.1.1\code\themes\skies.js.map" />
     <Content Include="Highcharts-6.1.1\code\themes\sunset.js.map" />
-    <Content Include="bootstrap-3.3.7\css\bootstrap-theme.css.map" />
-    <Content Include="bootstrap-3.3.7\css\bootstrap-theme.min.css.map" />
-    <Content Include="bootstrap-3.3.7\css\bootstrap.css.map" />
-    <Content Include="bootstrap-3.3.7\css\bootstrap.min.css.map" />
-    <Content Include="bootstrap-3.3.7\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap-3.3.7\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.3.7\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
@@ -1471,6 +1469,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="test.html" />
     <Content Include="Vue-2.5.16\vue.common.js" />
     <Content Include="Vue-2.5.16\vue.esm.browser.js" />
     <Content Include="Vue-2.5.16\vue.esm.js" />
@@ -1485,6 +1484,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Mumu.Frameworks.AjaxController\Mumu.Frameworks.AjaxController.csproj">
+      <Project>{be7a526d-4114-4016-885e-26b23d1cdcac}</Project>
+      <Name>Mumu.Frameworks.AjaxController</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -1498,9 +1504,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2622</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2622/</IISUrl>
+          <IISUrl>http://localhost:6790/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
