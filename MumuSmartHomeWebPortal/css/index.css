@@ -1,0 +1,34 @@
+﻿body {
+    font-family:'Microsoft YaHei','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom:20px;
+    color:#5a5a5a;
+}
+.mainDiv {
+    width:100%;
+    margin:0 auto;
+    margin-top:0px;
+    border-radius:5px;
+}
+.mySlider {
+    width:100%;
+    height:280px;
+    margin:0 auto;
+    display:block;
+    border-radius:3px;    
+}
+.imgSize {
+    width:50%;
+    height:100%;
+    margin:0 auto;
+}
+#myCarousel {
+    width:100%;
+    margin:0 auto;
+}
+.newsBoard {
+    display:block;
+    width:100%;
+    height:220px;
+    /*margin-top:180px;*/
+    background-color:#0094ff;
+}
