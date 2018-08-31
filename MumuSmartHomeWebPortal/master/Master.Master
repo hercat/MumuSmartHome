@@ -1,11 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="MumuSmartHomeWebPortal.master.Master" %>
-
+<%@ Register Src="~/userControl/ucMainMenu.ascx" TagPrefix="uc1" TagName="ucMainMenu" %>
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>木木之家</title>
+    <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="../bootstrap-3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" />
@@ -18,13 +17,39 @@
     <script src="../jquery-easyui-1.5.5.2/jquery.min.js"></script>
     <script src="../jquery-easyui-1.5.5.2/jquery.easyui.min.js"></script>
     <link href="../css/master.css" rel="stylesheet" />
+    <script src="../js/master.js"></script>
 </head>
 <body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <div class="head_line"></div>
+            <div class="head">
+                <div class="head_left">
+                    <span id="sysName"></span>
+                </div>
+                <div class="head_right"></div>
+            </div>
+        </div>
+        <div class="main_container">
+            <div class="main_wrap">
+                <div class="left_container">
+                    <div id="splitter" class="splitter" onclick="menuHideOrShow()">
+                        <img src="../images/sources/narrow.png" />
+                    </div>
+                    <div id="menu">
+                        <uc1:ucMainMenu runat="server" id="ucMainMenu" />
+                    </div>
+                </div>
+                <div class="right_container">
+                    <asp:ContentPlaceHolder ID="content" runat="server">
 
-    <div>
-        <asp:ContentPlaceHolder ID="content" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+             Copyright 2018© 木木之家&nbsp;&nbsp;&nbsp; <span id="sysVersion">version 1.0</span>
+        </div>
+    </form>
 </body>
 </html>

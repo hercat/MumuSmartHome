@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MumuSmartHomeWebPortal</RootNamespace>
     <AssemblyName>MumuSmartHomeWebPortal</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -59,9 +59,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -78,6 +78,8 @@
     <Content Include="bootstrap-3.3.7\js\bootstrap.min.js" />
     <Content Include="bootstrap-3.3.7\js\npm.js" />
     <Content Include="css\index.css" />
+    <Content Include="css\MainMenu.css" />
+    <Content Include="css\master.css" />
     <Content Include="css\test.css" />
     <Content Include="echarts 4.1.0\thems\dark.js" />
     <Content Include="echarts 4.1.0\echarts.min.js" />
@@ -825,11 +827,44 @@
     <Content Include="Highcharts-6.1.1\graphics\text.svg" />
     <Content Include="Highcharts-6.1.1\graphics\tunnel.svg" />
     <Content Include="Highcharts-6.1.1\index.htm" />
-    <Content Include="images\381.jpg" />
-    <Content Include="images\382.jpg" />
-    <Content Include="images\384.jpg" />
-    <Content Include="index.aspx" />
-    <Content Include="index.html" />
+    <Content Include="images\default\content_title.jpg" />
+    <Content Include="images\default\foot_bg.jpg" />
+    <Content Include="images\default\head_back.jpg" />
+    <Content Include="images\default\head_line.jpg" />
+    <Content Include="images\default\Horizontal_line.png" />
+    <Content Include="images\default\icon_head_minus.gif" />
+    <Content Include="images\default\icon_head_plus.gif" />
+    <Content Include="images\default\jiantou.png" />
+    <Content Include="images\default\linearbot.png" />
+    <Content Include="images\default\list.png" />
+    <Content Include="images\default\loading_background.png" />
+    <Content Include="images\default\menu.jpg" />
+    <Content Include="images\default\menu_dt_active.jpg" />
+    <Content Include="images\default\menu_hover.jpg" />
+    <Content Include="images\default\page_bg.png" />
+    <Content Include="images\default\splitter.jpg" />
+    <Content Include="images\new\foot_bg.jpg" />
+    <Content Include="images\new\head_back.jpg" />
+    <Content Include="images\new\head_line.jpg" />
+    <Content Include="images\new\splitter.jpg" />
+    <Content Include="images\sources\addressbook.png" />
+    <Content Include="images\sources\addressbook_fill.png" />
+    <Content Include="images\sources\computer_fill.png" />
+    <Content Include="images\sources\down.png" />
+    <Content Include="images\sources\fullscreen.png" />
+    <Content Include="images\sources\group_fill.png" />
+    <Content Include="images\sources\lock_fill.png" />
+    <Content Include="images\new\menu.jpg" />
+    <Content Include="images\sources\narrow.png" />
+    <Content Include="images\sources\packup.png" />
+    <Content Include="images\sources\people_fill.png" />
+    <Content Include="images\sources\play_fill.png" />
+    <Content Include="images\sources\setting.png" />
+    <Content Include="images\sources\tasks.png" />
+    <Content Include="images\sources\unfold.png" />
+    <Content Include="images\sources\up.png" />
+    <Content Include="index1.aspx" />
+    <Content Include="index1.html" />
     <Content Include="jquery-easyui-1.5.5.2\easyloader.js" />
     <Content Include="jquery-easyui-1.5.5.2\jquery.easyui.min.js" />
     <Content Include="jquery-easyui-1.5.5.2\jquery.easyui.mobile.js" />
@@ -1360,6 +1395,8 @@
     <Content Include="jquery-easyui-1.5.5.2\themes\mobile.css" />
     <Content Include="jquery\jquery-1.9.0.js" />
     <Content Include="jquery\jquery-3.3.1.min.js" />
+    <Content Include="js\mainMenu.js" />
+    <Content Include="js\master.js" />
     <Content Include="js\test.js" />
     <Content Include="log4net.xml" />
     <Content Include="packages.config" />
@@ -1474,35 +1511,95 @@
     <Content Include="bootstrap-3.3.7\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="userControl\ucMainMenu.ascx" />
+    <Content Include="views\UserManagePage.aspx" />
+    <Content Include="zTree_v3\css\awesomeStyle\awesome.css" />
+    <Content Include="zTree_v3\css\awesomeStyle\img\loading.gif" />
+    <Content Include="zTree_v3\css\demo.css" />
+    <Content Include="zTree_v3\css\metroStyle\img\line_conn.png" />
+    <Content Include="zTree_v3\css\metroStyle\img\loading.gif" />
+    <Content Include="zTree_v3\css\metroStyle\img\metro.gif" />
+    <Content Include="zTree_v3\css\metroStyle\img\metro.png" />
+    <Content Include="zTree_v3\css\metroStyle\metroStyle.css" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\loading.gif" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="zTree_v3\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="zTree_v3\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="zTree_v3\js\jquery-1.4.4.min.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.all.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.all.min.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.core.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.core.min.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.excheck.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.excheck.min.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.exedit.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.exedit.min.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.exhide.js" />
+    <Content Include="zTree_v3\js\jquery.ztree.exhide.min.js" />
+    <Content Include="master\Master.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="zTree_v3\css\awesomeStyle\awesome.less" />
+    <Content Include="zTree_v3\css\awesomeStyle\fa.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="test.html" />
-    <Content Include="Vue-2.5.16\vue.common.js" />
-    <Content Include="Vue-2.5.16\vue.esm.browser.js" />
-    <Content Include="Vue-2.5.16\vue.esm.js" />
-    <Content Include="Vue-2.5.16\vue.js" />
-    <Content Include="Vue-2.5.16\vue.min.js" />
-    <Content Include="Vue-2.5.16\vue.runtime.common.js" />
-    <Content Include="Vue-2.5.16\vue.runtime.esm.js" />
-    <Content Include="Vue-2.5.16\vue.runtime.js" />
-    <Content Include="Vue-2.5.16\vue.runtime.min.js" />
+    <Content Include="vue-2.5.16\vue.common.js" />
+    <Content Include="vue-2.5.16\vue.esm.browser.js" />
+    <Content Include="vue-2.5.16\vue.esm.js" />
+    <Content Include="vue-2.5.16\vue.js" />
+    <Content Include="vue-2.5.16\vue.min.js" />
+    <Content Include="vue-2.5.16\vue.runtime.common.js" />
+    <Content Include="vue-2.5.16\vue.runtime.esm.js" />
+    <Content Include="vue-2.5.16\vue.runtime.js" />
+    <Content Include="vue-2.5.16\vue.runtime.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="index1.aspx.cs">
+      <DependentUpon>index1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="index1.aspx.designer.cs">
+      <DependentUpon>index1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userControl\ucMainMenu.ascx.cs">
+      <DependentUpon>ucMainMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userControl\ucMainMenu.ascx.designer.cs">
+      <DependentUpon>ucMainMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="views\UserManagePage.aspx.cs">
+      <DependentUpon>UserManagePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\UserManagePage.aspx.designer.cs">
+      <DependentUpon>UserManagePage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

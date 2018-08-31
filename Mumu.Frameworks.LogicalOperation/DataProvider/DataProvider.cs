@@ -206,7 +206,7 @@ namespace Mumu.Frameworks.LogicalOperation
                 return _dbUserPermissionDP;
             }
         }
-        #endregion`
+        #endregion
 
         #region 用户角色数据提供对象
         private static IUserRole _dbUserRoleDP;

@@ -22,3 +22,4 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxCon
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\bin\Debug\Mumu.Frameworks.LogicalOperation.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\bin\Debug\Mumu.Frameworks.Utility.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\bin\Debug\Mumu.Frameworks.DatabaseInterface.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.AjaxController\bin\Debug\ImageProcessor.dll

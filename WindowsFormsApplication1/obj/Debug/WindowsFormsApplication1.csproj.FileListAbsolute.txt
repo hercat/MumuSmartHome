@@ -26,3 +26,8 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\MongoDB.Driver.GridFS.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\MongoDB.Driver.Legacy.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MongodbForm.resources
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\ImageProcessor.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ImageProcessorForm.resources
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\ImageProcessor.xml
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\bin\Debug\itextsharp.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ItextSharpForm.resources

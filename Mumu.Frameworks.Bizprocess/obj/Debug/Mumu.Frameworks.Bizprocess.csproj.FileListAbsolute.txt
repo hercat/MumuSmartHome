@@ -19,3 +19,4 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizproc
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizprocess\obj\Debug\Mumu.Frameworks.Bizprocess.csprojResolveAssemblyReference.cache
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizprocess\obj\Debug\Mumu.Frameworks.Bizprocess.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizprocess\obj\Debug\Mumu.Frameworks.Bizprocess.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizprocess\bin\Debug\ImageProcessor.dll

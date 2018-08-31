@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormsApplication1</RootNamespace>
     <AssemblyName>WindowsFormsApplication1</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -34,6 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ImageProcessor, Version=2.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.5.6\lib\net45\ImageProcessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Library\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\Library\Mongodb\MongoDB.Bson.dll</HintPath>
     </Reference>
@@ -71,6 +78,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageProcessorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageProcessorForm.Designer.cs">
+      <DependentUpon>ImageProcessorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItextSharpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItextSharpForm.Designer.cs">
+      <DependentUpon>ItextSharpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MongodbForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +100,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageProcessorForm.resx">
+      <DependentUpon>ImageProcessorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItextSharpForm.resx">
+      <DependentUpon>ItextSharpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MongodbForm.resx">
       <DependentUpon>MongodbForm.cs</DependentUpon>
@@ -95,6 +120,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
