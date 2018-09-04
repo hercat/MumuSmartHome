@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfigManager\AppConfigManager.cs" />
+    <Compile Include="Weixin\WeixinApiDispatch.cs" />
+    <Compile Include="Weixin\WeixinApiManager.cs" />
     <Compile Include="Weixin\WeixinConfig.cs" />
     <Compile Include="Weixin\WeixinMessage.cs" />
     <Compile Include="Weixin\BaseMessage.cs" />
@@ -86,7 +88,6 @@
     <Compile Include="ImageProcessor\ImageProcessorHelper.cs" />
     <Compile Include="IniFileHelper\IniFileHelper.cs" />
     <Compile Include="ItextSharpPdfHelper\ItextSharpPdfHelper.cs" />
-    <Compile Include="Weixin\IWeixinAction.cs" />
     <Compile Include="MongodbHelper\MongodbHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendMessage\SendMessageHelper.cs" />
