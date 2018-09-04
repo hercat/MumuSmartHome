@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using log4net;
 using System.Reflection;
+using System.Configuration;
 
 namespace Mumu.Frameworks.Utility
 {
@@ -44,6 +45,11 @@ namespace Mumu.Frameworks.Utility
             dllname = DicDataProvider[dpname];
             assname = dllname.Substring(0, dllname.LastIndexOf("."));
             return true;
+        }
+
+        public static string GetAppNodeValue(string nodename)
+        {
+            return ConfigurationManager.AppSettings[nodename];
         }
     }
 }

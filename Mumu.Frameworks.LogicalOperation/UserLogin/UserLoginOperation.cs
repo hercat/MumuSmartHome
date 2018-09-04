@@ -91,7 +91,7 @@ namespace Mumu.Frameworks.LogicalOperation
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public UserLogin GetUserLoginInfoByName(string name)
+        public static  UserLogin GetUserLoginInfoByName(string name)
         {
             UserLogin info = null;
             IDbConnection conn = null;

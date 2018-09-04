@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ItextSharpForm());//MongodbForm
+            Application.Run(new Form1());//MongodbForm
         }
     }
 }
