@@ -63,7 +63,86 @@ namespace Mumu.Frameworks.Utility
             string result = HttpHelper.HttpGet(url);
             return result;
         }
-
+        /// <summary>
+        /// 设置微信模板所属行业信息
+        /// {"industry_id1":"1","industry_id2":"4"}
+        /// </summary>
+        /// <param name="industry"></param>
+        public void SetTemplateIndustry(string industry)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token={0}", access_token);
+            HttpHelper.HttpPost(url, industry);
+        }
+        /// <summary>
+        /// 获取微信模板所属行业信息
+        /// </summary>
+        /// <returns></returns>
+        public string GetTemplateIndustry()
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token={0}", access_token);
+            string result = HttpHelper.HttpGet(url);
+            return result;
+        }
+        /// <summary>
+        /// 获取微信模板ID        
+        /// </summary>
+        /// <param name="template_id_short">{"template_id_short":"TM00015"}</param>
+        /// <returns></returns>
+        public string GetTemplateId(string template_id_short)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/template/api_add_template?access_token={0}", access_token);
+            string result = HttpHelper.HttpPost(url, template_id_short);
+            return result;
+        }
+        /// <summary>
+        /// 获取微信模板列表
+        /// </summary>
+        /// <returns></returns>
+        public string GetTemplateList()
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token={0}", access_token);
+            string result = HttpHelper.HttpGet(url);
+            return result;
+        }
+        /// <summary>
+        /// 删除微信模板
+        /// </summary>
+        /// <param name="template_id">{ "template_id" : "Dyvp3-Ff0cnail_CDSzk1fIc6-9lOkxsQE7exTJbwUE"}</param>
+        /// <returns></returns>
+        public string DeleteTemplate(string template_id)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/template/del_private_template?access_token={0}", access_token);
+            string result = HttpHelper.HttpPost(url, template_id);
+            return result;
+        }
+        /// <summary>
+        /// 发送微信模板消息
+        /// </summary>
+        /// <param name="postData"></param>
+        /// <returns></returns>
+        public string SendTemplateMessage(string postData)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={0}", access_token);
+            string result = HttpHelper.HttpPost(url, postData);
+            return result;
+        }
+        /// <summary>
+        /// 获取微信服务器IP地址
+        /// </summary>
+        /// <returns>{"ip_list": ["127.0.0.1","127.0.0.2","101.226.103.0/25"]}</returns>
+        public string GetWeixinServerIP()
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token={0}", access_token);
+            string result = HttpHelper.HttpGet(url);
+            return result;
+        }
         
     }
 }

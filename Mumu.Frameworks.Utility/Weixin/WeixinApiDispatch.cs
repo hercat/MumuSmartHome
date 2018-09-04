@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Mumu.Frameworks.Utility
 {
@@ -32,12 +33,16 @@ namespace Mumu.Frameworks.Utility
         /// <summary>
         /// 任务分配
         /// </summary>
-        /// <param name="postString"></param>
+        /// <param name="postData"></param>
         /// <returns></returns>
-        public string Dispatch(string postString)
+        public string Dispatch(string postData)
         {
             string responseContent = string.Empty;
-
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(postData);
+            XmlElement root = doc.DocumentElement;
+            XmlNode nodeMsgType = root.SelectSingleNode("MsgType");
+            
             return responseContent;
         }
         /// <summary>
