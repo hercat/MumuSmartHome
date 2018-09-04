@@ -6,6 +6,7 @@ using System.Text;
 using System.Web;
 using System.Configuration;
 using log4net;
+using log4net.Config;
 using System.Reflection;
 using Mumu.Frameworks.Utility;
 
@@ -19,6 +20,7 @@ namespace MumuHomeWechat
         private readonly static ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         public void ProcessRequest(HttpContext context)
         {
+            log4netInit();
             //微信平台入口验证处理
             WechatEnterPointer(context);
         }
@@ -52,11 +54,6 @@ namespace MumuHomeWechat
         /// </summary>
         private void Execute(string postString)
         {
-            //string echostr = HttpContext.Current.Request["echostr"];
-            //string signature = HttpContext.Current.Request["signature"];
-            //string timestamp = HttpContext.Current.Request["timestamp"];
-            //string nonce = HttpContext.Current.Request["nonce"];
-
             //string token = WeixinConfig.WXTOKEN;
             //string appid = WeixinConfig.WXAPPID;
             //string encodingAesKey = WeixinConfig.WXENCODINGAESKEY;
@@ -66,7 +63,7 @@ namespace MumuHomeWechat
             HttpContext.Current.Response.Write(response);
         }
         /// <summary>
-        /// 服务器与微信服务器验证操作
+        /// 服务器与微信服务器接入验证操作
         /// </summary>
         private void WechatAuth()
         {
@@ -95,6 +92,13 @@ namespace MumuHomeWechat
             {
                 return false;
             }
+        }
+
+        private void log4netInit()
+        {
+            string currentPath = AppDomain.CurrentDomain.BaseDirectory;
+            string log4netConfig = string.Format("{0}\\log4net.xml", currentPath);
+            XmlConfigurator.ConfigureAndWatch(new FileInfo(log4netConfig));
         }
     }
 }
