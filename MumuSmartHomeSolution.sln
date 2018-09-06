@@ -44,8 +44,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mumu.Frameworks.WebInterfac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{D15DE02E-E9B2-492E-9DC9-C7E0C304B84E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{F1D02D50-C221-4D66-AD8C-A662417B7756}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bizprocess", "Bizprocess", "{DBD72F5A-9C48-4177-89FA-DA66880E87E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mumu.Frameworks.Bizprocess", "Mumu.Frameworks.Bizprocess\Mumu.Frameworks.Bizprocess.csproj", "{CBD498D3-C20F-4926-B63D-5254956D40B3}"

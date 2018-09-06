@@ -18,6 +18,7 @@ namespace Mumu.Frameworks.Utility
     public class IniFileHelper
     {
         private readonly static ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         #region 单例模式
         private static IniFileHelper _instance = null;
         private static object locker = new object();

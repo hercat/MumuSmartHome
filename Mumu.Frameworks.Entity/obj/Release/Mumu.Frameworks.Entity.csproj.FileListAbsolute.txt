@@ -1,0 +1,5 @@
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Entity\bin\Release\Mumu.Frameworks.Entity.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Entity\bin\Release\Mumu.Frameworks.Entity.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Entity\obj\Release\Mumu.Frameworks.Entity.csprojResolveAssemblyReference.cache
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Entity\obj\Release\Mumu.Frameworks.Entity.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Entity\obj\Release\Mumu.Frameworks.Entity.pdb

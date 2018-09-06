@@ -5,11 +5,16 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using log4net;
+using log4net.Config;
+using System.Reflection;
+using System.IO;
 
 namespace Mumu.Frameworks.Utility
 {
     public class WeixinApiDispatch
     {
+        private readonly static ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         /// <summary>
         /// 验证签名
         /// </summary>
@@ -23,6 +28,7 @@ namespace Mumu.Frameworks.Utility
             string[] array = { token, timestamp, nonce };
             Array.Sort(array);
             string temp = string.Join("", array);
+            //SHA1加密
             temp = SHA1Signature(temp, Encoding.UTF8);
             temp = temp.ToLower();
             if (signature == temp)
@@ -42,7 +48,42 @@ namespace Mumu.Frameworks.Utility
             doc.LoadXml(postData);
             XmlElement root = doc.DocumentElement;
             XmlNode nodeMsgType = root.SelectSingleNode("MsgType");
-            
+            string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
+            string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
+            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;
+            string Content = root.SelectSingleNode("Content").InnerText;
+            string MsgType = nodeMsgType.InnerText.ToLower();
+            log.Info("Dispatch:" + MsgType);
+            switch (MsgType)
+            {                
+                case "text":
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendFormat("这里是WUWEI微信公众平台测试账号!\r\n");
+                    sb.AppendFormat("你发送的文字内容为:{0}\r\n", Content);
+                    sb.AppendFormat("你的OPENID:{0}\r\n", FromUserName);
+                    //注意被动回复信息时ToUserName和FromUserName与接收时相反否则将回复信息失败！
+                    responseContent = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", FromUserName, ToUserName, HttpHelper.ConvertDateTimeToInt(DateTime.Now),sb.ToString()).Trim();
+                    break;
+                case "event":
+                    string eventName = root.SelectSingleNode("Event").InnerText.ToLower();
+                    log.Info(eventName);
+                    switch (eventName)
+                    {
+                        case "click":
+                            string key = root.SelectSingleNode("EventKey").InnerText;
+                            log.Info("click" + key);
+                            break;
+                        case "subscribe":
+                            log.Info("subscribe");
+                            string str = "欢迎关注【WUWEI测试微信公众号】！";
+                            responseContent = string.Format("<xml> <ToUserName>< ![CDATA[{0}] ]></ToUserName> <FromUserName>< ![CDATA[{1}] ]></FromUserName> <CreateTime>{2}</CreateTime> <MsgType>< ![CDATA[text] ]></MsgType> <Content>< ![CDATA[{3}] ]></Content> </xml>", FromUserName, ToUserName, HttpHelper.ConvertDateTimeToInt(DateTime.Now), str);
+                            break;
+                        case "unsubscribe":
+                            log.Info("unsubscribe");
+                            break;
+                    }                    
+                    break;
+            }
             return responseContent;
         }
         /// <summary>

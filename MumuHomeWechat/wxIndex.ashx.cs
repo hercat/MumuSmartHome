@@ -20,6 +20,7 @@ namespace MumuHomeWechat
         private readonly static ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         public void ProcessRequest(HttpContext context)
         {
+            //日志配置初始化
             log4netInit();
             //微信平台入口验证处理
             WechatEnterPointer(context);
@@ -38,7 +39,7 @@ namespace MumuHomeWechat
                 {
                     byte[] postBytes = new byte[stream.Length];
                     stream.Read(postBytes, 0, (Int32)stream.Length);
-                    postString = Encoding.Default.GetString(postBytes);
+                    postString = Encoding.UTF8.GetString(postBytes);                    
                 }
                 //处理用户微信请求
                 Execute(postString);
@@ -54,11 +55,11 @@ namespace MumuHomeWechat
         /// </summary>
         private void Execute(string postString)
         {
-            //string token = WeixinConfig.WXTOKEN;
-            //string appid = WeixinConfig.WXAPPID;
-            //string encodingAesKey = WeixinConfig.WXENCODINGAESKEY;
-
+            //日志记录微信请求数据
+            log.Info("postString:" + postString);
             string response = new WeixinApiDispatch().Dispatch(postString);
+            //日志记录响应微信请求数据内容
+            log.Info("response:" + response);
             HttpContext.Current.Response.ContentEncoding = Encoding.UTF8;
             HttpContext.Current.Response.Write(response);
         }
@@ -80,7 +81,7 @@ namespace MumuHomeWechat
                 //微信验证成功后，返回给微信平台的随机字符串
                 if (!string.IsNullOrEmpty(echostr))
                 {
-                    log.Info("WechatAuth:" + echostr);
+                    log.Info("WechatAuth--echostr:" + echostr);
                     HttpContext.Current.Response.Write(echostr);
                     HttpContext.Current.Response.End();
                 }

@@ -69,6 +69,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="javascript\jweixin-1.2.0.js" />
+    <Content Include="log4net.xml" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -76,6 +78,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WeixinMenuInit.aspx" />
     <Content Include="wxIndex.ashx" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +88,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeixinMenuInit.aspx.cs">
+      <DependentUpon>WeixinMenuInit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeixinMenuInit.aspx.designer.cs">
+      <DependentUpon>WeixinMenuInit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="wxIndex.ashx.cs">
       <DependentUpon>wxIndex.ashx</DependentUpon>
     </Compile>
@@ -94,6 +104,9 @@
       <Project>{388d5e7a-f23e-41a8-bf02-adbdc42fa19b}</Project>
       <Name>Mumu.Frameworks.Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Weixin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
