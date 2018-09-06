@@ -50,13 +50,13 @@ namespace Mumu.Frameworks.Utility
             XmlNode nodeMsgType = root.SelectSingleNode("MsgType");
             string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
             string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
-            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;
-            string Content = root.SelectSingleNode("Content").InnerText;
+            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;            
             string MsgType = nodeMsgType.InnerText.ToLower();
-            log.Info("Dispatch:" + MsgType);
+            log.Info("MsgType:" + MsgType);
             switch (MsgType)
-            {                
+            {
                 case "text":
+                    string Content = root.SelectSingleNode("Content").InnerText;
                     StringBuilder sb = new StringBuilder();
                     sb.AppendFormat("这里是WUWEI微信公众平台测试账号!\r\n");
                     sb.AppendFormat("你发送的文字内容为:{0}\r\n", Content);
@@ -66,22 +66,24 @@ namespace Mumu.Frameworks.Utility
                     break;
                 case "event":
                     string eventName = root.SelectSingleNode("Event").InnerText.ToLower();
-                    log.Info(eventName);
+                    log.Info("Event:" + eventName);
                     switch (eventName)
                     {
                         case "click":
                             string key = root.SelectSingleNode("EventKey").InnerText;
-                            log.Info("click" + key);
+                            log.Info("click:" + key);
                             break;
                         case "subscribe":
-                            log.Info("subscribe");
-                            string str = "欢迎关注【WUWEI测试微信公众号】！";
-                            responseContent = string.Format("<xml> <ToUserName>< ![CDATA[{0}] ]></ToUserName> <FromUserName>< ![CDATA[{1}] ]></FromUserName> <CreateTime>{2}</CreateTime> <MsgType>< ![CDATA[text] ]></MsgType> <Content>< ![CDATA[{3}] ]></Content> </xml>", FromUserName, ToUserName, HttpHelper.ConvertDateTimeToInt(DateTime.Now), str);
+                            log.Info("subscribe:" + FromUserName);
+                            string str = "欢迎关注WUWEI测试微信公众号!";
+                            responseContent = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", FromUserName, ToUserName, HttpHelper.ConvertDateTimeToInt(DateTime.Now), str).Trim();
                             break;
                         case "unsubscribe":
-                            log.Info("unsubscribe");
+                            log.Info("unsubscribe:" + FromUserName);
+                            str = "取消关注";
+                            responseContent = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", FromUserName, ToUserName, HttpHelper.ConvertDateTimeToInt(DateTime.Now), str).Trim();
                             break;
-                    }                    
+                    }
                     break;
             }
             return responseContent;
