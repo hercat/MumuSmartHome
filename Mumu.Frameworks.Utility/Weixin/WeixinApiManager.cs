@@ -192,5 +192,6 @@ namespace Mumu.Frameworks.Utility
             string result = HttpHelper.HttpGet(url);
             return result;
         }
+        public string 
     }
 }

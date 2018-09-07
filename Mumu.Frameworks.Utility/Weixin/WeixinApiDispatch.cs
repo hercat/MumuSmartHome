@@ -16,7 +16,7 @@ namespace Mumu.Frameworks.Utility
     {
         private readonly static ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         /// <summary>
-        /// 验证签名
+        /// 微信签名验证
         /// </summary>
         /// <param name="token"></param>
         /// <param name="signature"></param>

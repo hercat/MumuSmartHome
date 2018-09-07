@@ -9,7 +9,7 @@ namespace Mumu.Frameworks.Utility
     /// 微信消息基类
     /// </summary>
     public class BaseMessage
-    {
+    {        
         /// <summary>
         /// 开发者微信号
         /// </summary>
@@ -235,7 +235,7 @@ namespace Mumu.Frameworks.Utility
         /// 点击图文消息跳转链接
         /// </summary>
         public string Url { get; set; }
-    }
+    }   
     enum EnumWeixinMsgType
     {
         text,   //文本消息
