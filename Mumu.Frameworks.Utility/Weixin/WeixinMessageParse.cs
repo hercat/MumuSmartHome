@@ -35,6 +35,6 @@ namespace Mumu.Frameworks.Utility
             info.MsgType = MsgType;
             info.CreateTime = Convert.ToInt32(CreateTime);
             return info;
-        }
+        }        
     }
 }
