@@ -171,7 +171,9 @@ namespace Mumu.Frameworks.Utility
         /// 客服账号信息删除
         /// </summary>
         /// <param name="account"></param>
-        /// <returns></returns>
+        /// <returns></returns
+        /// 
+        ///>
         public string DeleteCustomServiceAccount(string account)
         {
             string access_token = GetAccessToken();

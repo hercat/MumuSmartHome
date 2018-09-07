@@ -85,11 +85,10 @@
     <Compile Include="AppConfigManager\AppConfigManager.cs" />
     <Compile Include="GenericMatrix\GenericMatrix.cs" />
     <Compile Include="HttpHelper\HttpHelper.cs" />
+    <Compile Include="Weixin\WeixinMessage.cs" />
     <Compile Include="Weixin\WeixinApiDispatch.cs" />
     <Compile Include="Weixin\WeixinApiManager.cs" />
     <Compile Include="Weixin\WeixinConfig.cs" />
-    <Compile Include="Weixin\WeixinMessage.cs" />
-    <Compile Include="Weixin\BaseMessage.cs" />
     <Compile Include="Encryption\EncryptionHelper.cs" />
     <Compile Include="ImageProcessor\ImageProcessorHelper.cs" />
     <Compile Include="IniFileHelper\IniFileHelper.cs" />
