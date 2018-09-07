@@ -143,6 +143,52 @@ namespace Mumu.Frameworks.Utility
             string result = HttpHelper.HttpGet(url);
             return result;
         }
-        
+        /// <summary>
+        /// 客服账号添加
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public string AddCustomServiceAccount(string account)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/customservice/kfaccount/add?access_token={0}", access_token);
+            string result = HttpHelper.HttpPost(url, account);
+            return result;
+        }
+        /// <summary>
+        /// 客服账号信息修改
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public string ModifierCustomServiceAccount(string account)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/customservice/kfaccount/update?access_token={0}", account);
+            string result = HttpHelper.HttpPost(url, account);
+            return result;
+        }
+        /// <summary>
+        /// 客服账号信息删除
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public string DeleteCustomServiceAccount(string account)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/customservice/kfaccount/del?access_token={0}", access_token);
+            string result = HttpHelper.HttpPost(url, account);
+            return result;
+        }
+        /// <summary>
+        /// 获取所有客服账号信息
+        /// </summary>
+        /// <returns></returns>
+        public string GetAllCustomServiceAccount()
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/customservice/getkflist?access_token={0}", access_token);
+            string result = HttpHelper.HttpGet(url);
+            return result;
+        }
     }
 }
