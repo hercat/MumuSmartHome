@@ -87,7 +87,7 @@ namespace Mumu.Frameworks.Utility
                     break;
             }
             return responseContent;
-        }
+        }        
         /// <summary>
         /// 生成SHA1验证签名
         /// </summary>

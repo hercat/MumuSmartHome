@@ -282,24 +282,8 @@ namespace WindowsFormsApplication1
         }
 
         private void button15_Click(object sender, EventArgs e)
-        {
-            BaseMessage msg = new BaseMessage()
-            {
-                FromUserName = "WUWEI",
-                ToUserName = "Mumu",
-                MsgId = DateTime.Now.ToFileTimeUtc(),
-                MsgType = "text"
-            };
-            string str = msg.ToXml();
-
-            //string xml = "<?xml version='1.0'?>"
-            //                + "<xml xmlns:xsi='http:////www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http:////www.w3.org/2001/XMLSchema'>"
-            //                +"<ToUserName > Mumu </ToUserName >"
-            //                +"<FromUserName > WUWEI </FromUserName >"
-            //                +"<CreateTime > 131804256408090517 </CreateTime >"
-            //                +"<MsgType > text </MsgType >"
-            //                +"</xml > ";
-            //BaseMessage  msg = XmlHelper.Deserialize<BaseMessage>(xml);
+        {            
+            
         }
     }
 }
