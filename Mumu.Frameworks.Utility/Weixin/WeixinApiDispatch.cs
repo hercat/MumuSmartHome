@@ -9,6 +9,7 @@ using log4net;
 using log4net.Config;
 using System.Reflection;
 using System.IO;
+using Mumu.Frameworks.Utility;
 
 namespace Mumu.Frameworks.Utility
 {
@@ -50,19 +51,71 @@ namespace Mumu.Frameworks.Utility
             XmlNode nodeMsgType = root.SelectSingleNode("MsgType");
             string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
             string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
-            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;            
             string MsgType = nodeMsgType.InnerText.ToLower();
-            log.Info("MsgType:" + MsgType);
             switch (MsgType)
             {
                 case "text":
-                    string Content = root.SelectSingleNode("Content").InnerText;
+                    #region
+                    //string Content = root.SelectSingleNode("Content").InnerText;
+                    //StringBuilder sb = new StringBuilder();
+                    //sb.AppendFormat("这里是WUWEI微信公众平台测试账号!\r\n");
+                    //sb.AppendFormat("你发送的文字内容为:{0}\r\n", Content);
+                    //sb.AppendFormat("你的OPENID:{0}\r\n", FromUserName);
+                    ////注意被动回复信息时ToUserName和FromUserName与接收时相反否则将回复信息失败！
+                    //responseContent = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", FromUserName, ToUserName, HttpHelper.ConvertDateTimeToInt(DateTime.Now),sb.ToString()).Trim();
+                    #endregion
+                    RequestText reqText = new RequestText().Parse(postData);
                     StringBuilder sb = new StringBuilder();
-                    sb.AppendFormat("这里是WUWEI微信公众平台测试账号!\r\n");
-                    sb.AppendFormat("你发送的文字内容为:{0}\r\n", Content);
-                    sb.AppendFormat("你的OPENID:{0}\r\n", FromUserName);
-                    //注意被动回复信息时ToUserName和FromUserName与接收时相反否则将回复信息失败！
-                    responseContent = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", FromUserName, ToUserName, HttpHelper.ConvertDateTimeToInt(DateTime.Now),sb.ToString()).Trim();
+                    sb.AppendFormat("消息类型:{0}\r\n", reqText.MsgType);
+                    sb.AppendFormat("内容:{0}", reqText.Content);
+                    WeixinTextMessage text = new WeixinTextMessage()
+                    {
+                        ToUserName = reqText.FromUserName,
+                        FromUserName = reqText.ToUserName,
+                        CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now),
+                        MsgType = reqText.MsgType,
+                        Content = sb.ToString()
+                    };
+                    responseContent = text.ToXml();
+                    log.Info(responseContent);
+                    break;
+                case "image":
+                    RequestImage reqImage = new RequestImage();
+                    WeixinImageMessage image = new WeixinImageMessage()
+                    {
+                        ToUserName = reqImage.FromUserName,
+                        FromUserName = reqImage.ToUserName,
+                        CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now),
+                        MsgType = reqImage.MsgType,
+                        MediaId = reqImage.MediaId
+                    };
+                    responseContent = image.ToXml();
+                    log.Info(responseContent);
+                    break;
+                case "voice":
+                    RequestVoice reqVoice = new RequestVoice();
+                    WeixinVoiceMessage voice = new WeixinVoiceMessage()
+                    {
+                        ToUserName = reqVoice.FromUserName,
+                        FromUserName = reqVoice.ToUserName,
+                        CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now),
+                        MsgType = reqVoice.MsgType,
+                        MediaId = reqVoice.MediaId
+                    };
+                    responseContent = voice.ToXml();
+                    log.Info(responseContent);
+                    break;
+                case "video":
+
+                    break;
+                case "shortvideo":
+
+                    break;
+                case "location":
+
+                    break;
+                case "link":
+
                     break;
                 case "event":
                     string eventName = root.SelectSingleNode("Event").InnerText.ToLower();
@@ -74,14 +127,12 @@ namespace Mumu.Frameworks.Utility
                             log.Info("click:" + key);
                             break;
                         case "subscribe":
-                            log.Info("subscribe:" + FromUserName);
+                            log.Info(string.Format("FromUserName:{0}关注成功！", FromUserName));
                             string str = "欢迎关注WUWEI测试微信公众号!";
                             responseContent = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", FromUserName, ToUserName, HttpHelper.ConvertDateTimeToInt(DateTime.Now), str).Trim();
                             break;
                         case "unsubscribe":
-                            log.Info(FromUserName + " unsubscribe:");
-                            str = "取消关注";
-                            //responseContent = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", FromUserName, ToUserName, HttpHelper.ConvertDateTimeToInt(DateTime.Now), str).Trim();
+                            log.Info(string.Format("FromUserName:{0}取消关注！", FromUserName));                    
                             break;
                     }
                     break;

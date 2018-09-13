@@ -16,3 +16,8 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\obj\Release\Mumu.Frameworks.Utility.csprojResolveAssemblyReference.cache
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\obj\Release\Mumu.Frameworks.Utility.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\obj\Release\Mumu.Frameworks.Utility.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Release\Apache.NMS.ActiveMQ.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Release\Apache.NMS.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Release\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Release\RabbitMQ.Client.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Release\Microsoft.Diagnostics.Tracing.EventSource.xml

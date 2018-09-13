@@ -16,3 +16,12 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\itextsharp.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\WHC.OrderWater.Commons.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Newtonsoft.Json.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\RabbitMQ.Client.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Apache.NMS.ActiveMQ.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Apache.NMS.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Apache.NMS.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Apache.NMS.xml
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Apache.NMS.ActiveMQ.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Utility\bin\Debug\Apache.NMS.ActiveMQ.xml

@@ -32,23 +32,23 @@ namespace Mumu.Frameworks.Utility
     /// </summary>
     public class WeixinTextMessage : BaseMessage
     {
-        public WeixinTextMessage()
-        {
-            MsgType = EnumWeixinMsgType.text.ToString().ToLower();
-            CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        }
-        public WeixinTextMessage(BaseMessage info) : this()
-        {
-            this.FromUserName = info.FromUserName;
-            this.ToUserName = info.ToUserName;
-        }
+        //public WeixinTextMessage()
+        //{
+        //    MsgType = EnumWeixinMsgType.text.ToString().ToLower();
+        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
+        //}
+        //public WeixinTextMessage(BaseMessage info) : this()
+        //{
+        //    this.FromUserName = info.FromUserName;
+        //    this.ToUserName = info.ToUserName;
+        //}
         /// <summary>
         /// 文本消息内容
         /// </summary>
         public string Content { get; set; }
         public string ToXml()
         {
-            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", FromUserName, ToUserName, CreateTime, Content);
+            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", ToUserName, FromUserName, CreateTime, Content);
             return xml;
         }
     }
@@ -57,23 +57,23 @@ namespace Mumu.Frameworks.Utility
     /// </summary>
     public class WeixinImageMessage : BaseMessage
     {
-        public WeixinImageMessage()
-        {
-            MsgType = EnumWeixinMsgType.image.ToString().ToLower();
-            CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        }
-        public WeixinImageMessage(BaseMessage info) : this()
-        {
-            this.FromUserName = info.FromUserName;
-            this.ToUserName = info.ToUserName;
-        }
+        //public WeixinImageMessage()
+        //{
+        //    MsgType = EnumWeixinMsgType.image.ToString().ToLower();
+        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
+        //}
+        //public WeixinImageMessage(BaseMessage info) : this()
+        //{
+        //    this.FromUserName = info.FromUserName;
+        //    this.ToUserName = info.ToUserName;
+        //}
         /// <summary>
         /// 通过素材管理中的接口上传多媒体文件，得到的id。
         /// </summary>
         public string MediaId { get; set; }
         public string ToXml()
         {
-            string xml = string.Format("<xml><ToUserName><![CDATA[toUser]]></ToUserName><FromUserName><![CDATA[fromUser] ]></FromUserName><CreateTime>12345678</CreateTime><MsgType>< ![CDATA[image] ]></MsgType><Image><MediaId>< ![CDATA[media_id]]></MediaId></Image></xml>");
+            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}] ]></FromUserName><CreateTime>{2}</CreateTime><MsgType>< ![CDATA[image] ]></MsgType><Image><MediaId>< ![CDATA[{3}]]></MediaId></Image></xml>", ToUserName, FromUserName, CreateTime, MediaId);
             return xml;
         }
     }
@@ -82,23 +82,23 @@ namespace Mumu.Frameworks.Utility
     /// </summary>
     public class WeixinVoiceMessage : BaseMessage
     {
-        public WeixinVoiceMessage()
-        {
-            MsgType = EnumWeixinMsgType.voice.ToString().ToLower();
-            CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        }
-        public WeixinVoiceMessage(BaseMessage info) : this()
-        {
-            this.FromUserName = info.FromUserName;
-            this.ToUserName = info.ToUserName;
-        }
+        //public WeixinVoiceMessage()
+        //{
+        //    MsgType = EnumWeixinMsgType.voice.ToString().ToLower();
+        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
+        //}
+        //public WeixinVoiceMessage(BaseMessage info) : this()
+        //{
+        //    this.FromUserName = info.FromUserName;
+        //    this.ToUserName = info.ToUserName;
+        //}
         /// <summary>
         /// 通过素材管理中的接口上传多媒体文件，得到的id
         /// </summary>
         public string MediaId { get; set; }
         public string ToXml()
         {
-            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[voice]]></MsgType><Voice><MediaId><![CDATA[{3}]]></MediaId></Voice></xml>", FromUserName, ToUserName, CreateTime, MediaId);
+            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[voice]]></MsgType><Voice><MediaId><![CDATA[{3}]]></MediaId></Voice></xml>", ToUserName, FromUserName, CreateTime, MediaId);
             return xml;
         }
     }
@@ -107,16 +107,16 @@ namespace Mumu.Frameworks.Utility
     /// </summary>
     public class WeixinVideoMessage : BaseMessage
     {
-        public WeixinVideoMessage()
-        {
-            MsgType = EnumWeixinMsgType.video.ToString().ToString();
-            CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        }
-        public WeixinVideoMessage(BaseMessage info) : this()
-        {
-            this.FromUserName = info.FromUserName;
-            this.ToUserName = info.ToUserName;
-        }
+        //public WeixinVideoMessage()
+        //{
+        //    MsgType = EnumWeixinMsgType.video.ToString().ToString();
+        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
+        //}
+        //public WeixinVideoMessage(BaseMessage info) : this()
+        //{
+        //    this.FromUserName = info.FromUserName;
+        //    this.ToUserName = info.ToUserName;
+        //}
         /// <summary>
         /// 通过素材管理中的接口上传多媒体文件，得到的id
         /// </summary>
@@ -131,7 +131,7 @@ namespace Mumu.Frameworks.Utility
         public string Description { get; set; }
         public string ToXml()
         {
-            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[video]]></MsgType><Video><MediaId><![CDATA[{3}]]></MediaId><Title><![CDATA[{4}]]></Title><Description><![CDATA[{5}]]></Description></Video></xml>", FromUserName, ToUserName, CreateTime, MediaId, Title, Description);
+            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[video]]></MsgType><Video><MediaId><![CDATA[{3}]]></MediaId><Title><![CDATA[{4}]]></Title><Description><![CDATA[{5}]]></Description></Video></xml>", ToUserName, FromUserName, CreateTime, MediaId, Title, Description);
             return xml;
         }
     }
@@ -141,16 +141,16 @@ namespace Mumu.Frameworks.Utility
 
     public class WeixinMusicMessage : BaseMessage
     {
-        public WeixinMusicMessage()
-        {
-            MsgType = EnumWeixinMsgType.music.ToString().ToLower();
-            CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        }
-        public WeixinMusicMessage(BaseMessage info) : this()
-        {
-            this.FromUserName = info.FromUserName;
-            this.ToUserName = info.ToUserName;
-        }
+        //public WeixinMusicMessage()
+        //{
+        //    MsgType = EnumWeixinMsgType.music.ToString().ToLower();
+        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
+        //}
+        //public WeixinMusicMessage(BaseMessage info) : this()
+        //{
+        //    this.FromUserName = info.FromUserName;
+        //    this.ToUserName = info.ToUserName;
+        //}
         /// <summary>
         /// 音乐标题
         /// </summary>
@@ -173,7 +173,7 @@ namespace Mumu.Frameworks.Utility
         public string ThumbMediaId { get; set; }
         public string ToXml()
         {
-            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[music]]></MsgType><Music><Title><![CDATA[{3}]]></Title><Description><![CDATA[{4}]]></Description><MusicUrl><![CDATA[{5}]]></MusicUrl><HQMusicUrl><![CDATA[{6}]]></HQMusicUrl><ThumbMediaId><![CDATA[{7}]]></ThumbMediaId></Music></xml>", FromUserName, ToUserName, CreateTime, Title, Description, MusicURL, HQMusicUrl, ThumbMediaId);
+            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[music]]></MsgType><Music><Title><![CDATA[{3}]]></Title><Description><![CDATA[{4}]]></Description><MusicUrl><![CDATA[{5}]]></MusicUrl><HQMusicUrl><![CDATA[{6}]]></HQMusicUrl><ThumbMediaId><![CDATA[{7}]]></ThumbMediaId></Music></xml>", ToUserName, FromUserName, CreateTime, Title, Description, MusicURL, HQMusicUrl, ThumbMediaId);
             return xml;
         }
     }
@@ -182,16 +182,16 @@ namespace Mumu.Frameworks.Utility
     /// </summary>
     public class WeixinNewsMessage : BaseMessage
     {
-        public WeixinNewsMessage()
-        {
-            MsgType = EnumWeixinMsgType.news.ToString().ToLower();
-            CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        }
-        public WeixinNewsMessage(BaseMessage info) : this()
-        {
-            this.FromUserName = info.FromUserName;
-            this.ToUserName = info.ToUserName;
-        }
+        //public WeixinNewsMessage()
+        //{
+        //    MsgType = EnumWeixinMsgType.news.ToString().ToLower();
+        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
+        //}
+        //public WeixinNewsMessage(BaseMessage info) : this()
+        //{
+        //    this.FromUserName = info.FromUserName;
+        //    this.ToUserName = info.ToUserName;
+        //}
         /// <summary>
         /// 图文消息个数，限制为8条以内
         /// </summary>
@@ -207,7 +207,7 @@ namespace Mumu.Frameworks.Utility
         public string ToXml()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[news]]></MsgType><ArticleCount>{3}</ArticleCount>", FromUserName, ToUserName, CreateTime, NewsItems.Count);
+            sb.AppendFormat("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[news]]></MsgType><ArticleCount>{3}</ArticleCount>", ToUserName, FromUserName, CreateTime, NewsItems.Count);
             sb.Append("<Articles>");
             foreach (NewsItem item in NewsItems)
             {

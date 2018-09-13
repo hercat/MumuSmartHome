@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Apache.NMS, Version=1.7.1.3894, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ActiveMQ\Apache.NMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS.ActiveMQ, Version=1.7.2.4108, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ActiveMQ\Apache.NMS.ActiveMQ.dll</HintPath>
+    </Reference>
     <Reference Include="ImageProcessor, Version=2.5.5.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Library\ImageProcessor.dll</HintPath>
@@ -41,6 +49,10 @@
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\Library\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\Library\Mongodb\MongoDB.Bson.dll</HintPath>
@@ -59,6 +71,10 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\RabbitMQ.Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -85,6 +101,7 @@
     <Compile Include="AppConfigManager\AppConfigManager.cs" />
     <Compile Include="GenericMatrix\GenericMatrix.cs" />
     <Compile Include="HttpHelper\HttpHelper.cs" />
+    <Compile Include="Weixin\WeixinMessageParse.cs" />
     <Compile Include="Weixin\WeixinMessage.cs" />
     <Compile Include="Weixin\WeixinApiDispatch.cs" />
     <Compile Include="Weixin\WeixinApiManager.cs" />
@@ -100,6 +117,7 @@
     <Compile Include="SettingBase\SystemSettingBase.cs" />
     <Compile Include="ThoughtWorksQRCode\ThoughtWorksQRCodeHelper.cs" />
     <Compile Include="Weixin\WeixinBasicAPI.cs" />
+    <Compile Include="Weixin\WeixinRequestMessage.cs" />
     <Compile Include="XmlHelper\XmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +126,9 @@
       <Name>Mumu.Frameworks.Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
