@@ -101,7 +101,6 @@
     <Compile Include="AppConfigManager\AppConfigManager.cs" />
     <Compile Include="GenericMatrix\GenericMatrix.cs" />
     <Compile Include="HttpHelper\HttpHelper.cs" />
-    <Compile Include="Weixin\WeixinMessageParse.cs" />
     <Compile Include="Weixin\WeixinMessage.cs" />
     <Compile Include="Weixin\WeixinApiDispatch.cs" />
     <Compile Include="Weixin\WeixinApiManager.cs" />

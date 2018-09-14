@@ -56,10 +56,10 @@ namespace MumuHomeWechat
         private void Execute(string postString)
         {
             //日志记录微信请求数据
-            log.Info("【Execute】postString:" + postString);
+            log.Info("请求消息内容:" + postString);
             string response = new WeixinApiDispatch().Dispatch(postString);
             //日志记录响应微信请求数据内容
-            log.Info("【Execute】response:" + response);
+            log.Info("回复消息内容:" + response);
             HttpContext.Current.Response.ContentEncoding = Encoding.UTF8;
             HttpContext.Current.Response.Write(response);
         }
@@ -81,7 +81,7 @@ namespace MumuHomeWechat
                 //微信验证成功后，返回给微信平台的随机字符串
                 if (!string.IsNullOrEmpty(echostr))
                 {
-                    log.Info("【WechatAuth】echostr:" + echostr);
+                    log.Info("微信平台返回随机字符串:" + echostr);
                     HttpContext.Current.Response.Write(echostr);
                     HttpContext.Current.Response.End();
                 }

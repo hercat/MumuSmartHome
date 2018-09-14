@@ -10,10 +10,30 @@ using System.Reflection;
 namespace Mumu.Frameworks.Utility
 {
     /// <summary>
+    /// 微信请求基类消息
+    /// </summary>
+    public class RequestBaseMessage : BaseMessage
+    {
+        public RequestBaseMessage Parse(string xml)
+        {
+            RequestBaseMessage info = new RequestBaseMessage();
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+            XmlElement root = doc.DocumentElement;
+            string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
+            string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
+            string MsgType = root.SelectSingleNode("MsgType").InnerText;
+            info.ToUserName = ToUserName;
+            info.FromUserName = FromUserName;
+            info.MsgType = MsgType;
+            return info;
+        }
+    }
+    /// <summary>
     /// 微信请求文本消息
     /// </summary>
     public class RequestText : BaseMessage
-    {
+    {        
         /// <summary>
         /// 文本消息内容
         /// </summary>
@@ -21,26 +41,30 @@ namespace Mumu.Frameworks.Utility
         public RequestText Parse(string xml)
         {
             RequestText info = new RequestText();
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(xml);
-            XmlElement root = doc.DocumentElement;
-            //消息类型
-            string MsgType = root.SelectSingleNode("MsgType").InnerText.ToLower();
-            //接收方帐号（收到的OpenID）
-            string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
-            //开发者微信号
-            string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
-            //消息创建时间 （整型）
-            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;
-            //消息id，64位整型
-            string msgId = root.SelectSingleNode("MsgId").InnerText;
-            //文本消息内容
-            string content = root.SelectSingleNode("Content").InnerText;
-            info.FromUserName = FromUserName;
-            info.ToUserName = ToUserName;
-            info.MsgType = MsgType;
-            info.Content = content;
-            info.CreateTime = Convert.ToInt32(CreateTime);
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                XmlElement root = doc.DocumentElement;
+                //消息类型
+                string MsgType = root.SelectSingleNode("MsgType").InnerText.ToLower();
+                //接收方帐号（收到的OpenID）
+                string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
+                //开发者微信号
+                string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
+                //消息id，64位整型
+                string msgId = root.SelectSingleNode("MsgId").InnerText;
+                //文本消息内容
+                string content = root.SelectSingleNode("Content").InnerText;                
+                info.ToUserName = ToUserName;
+                info.FromUserName = FromUserName;
+                info.MsgType = MsgType;
+                info.Content = content;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             return info;
         }
     }
@@ -60,21 +84,26 @@ namespace Mumu.Frameworks.Utility
         public RequestImage Parse(string xml)
         {
             RequestImage info = new RequestImage();
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(xml);
-            XmlElement root = doc.DocumentElement;
-            string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
-            string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
-            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;            
-            string MsgType = root.SelectSingleNode("MsgType").InnerText;
-            string PicUrl = root.SelectSingleNode("PicUrl").InnerText;
-            string MediaId = root.SelectSingleNode("MediaId").InnerText;
-            info.ToUserName = ToUserName;
-            info.FromUserName = FromUserName;
-            info.CreateTime = Convert.ToInt32(CreateTime);
-            info.MsgType = MsgType;
-            info.PicUrl = PicUrl;
-            info.MediaId = MediaId;
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                XmlElement root = doc.DocumentElement;
+                string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
+                string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
+                string MsgType = root.SelectSingleNode("MsgType").InnerText;
+                string PicUrl = root.SelectSingleNode("PicUrl").InnerText;
+                string MediaId = root.SelectSingleNode("MediaId").InnerText;
+                info.ToUserName = ToUserName;
+                info.FromUserName = FromUserName;
+                info.MsgType = MsgType;
+                info.PicUrl = PicUrl;
+                info.MediaId = MediaId;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
             return info;
         }
     }
@@ -94,21 +123,26 @@ namespace Mumu.Frameworks.Utility
         public RequestVoice Parse(string xml)
         {
             RequestVoice info = new RequestVoice();
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(xml);
-            XmlElement root = doc.DocumentElement;
-            string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
-            string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
-            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;
-            string MsgType = root.SelectSingleNode("MsgType").InnerText;
-            string MediaId = root.SelectSingleNode("MediaId").InnerText;
-            string Format = root.SelectSingleNode("Format").InnerText;
-            info.ToUserName = ToUserName;
-            info.FromUserName = FromUserName;
-            info.CreateTime = Convert.ToInt32(CreateTime);
-            info.MsgType = MsgType;
-            info.MediaId = MediaId;
-            info.Format = Format;
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                XmlElement root = doc.DocumentElement;
+                string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
+                string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
+                string MsgType = root.SelectSingleNode("MsgType").InnerText;
+                string MediaId = root.SelectSingleNode("MediaId").InnerText;
+                string Format = root.SelectSingleNode("Format").InnerText;
+                info.ToUserName = ToUserName;
+                info.FromUserName = FromUserName;
+                info.MsgType = MsgType;
+                info.MediaId = MediaId;
+                info.Format = Format;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             return info;
         }
     }
@@ -128,21 +162,26 @@ namespace Mumu.Frameworks.Utility
         public RequestVideo Parse(string xml)
         {
             RequestVideo info = new RequestVideo();
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(xml);
-            XmlElement root = doc.DocumentElement;
-            string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
-            string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
-            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;
-            string MsgType = root.SelectSingleNode("MsgType").InnerText;
-            string MediaId = root.SelectSingleNode("MediaId").InnerText;
-            string ThumbMediaId = root.SelectSingleNode("ThumbMediaId").InnerText;
-            info.ToUserName = ToUserName;
-            info.FromUserName = FromUserName;
-            info.CreateTime = Convert.ToInt32(CreateTime);
-            info.MsgType = MsgType;
-            info.MediaId = MediaId;
-            info.ThumbMediaId = ThumbMediaId;
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                XmlElement root = doc.DocumentElement;
+                string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
+                string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
+                string MsgType = root.SelectSingleNode("MsgType").InnerText;
+                string MediaId = root.SelectSingleNode("MediaId").InnerText;
+                string ThumbMediaId = root.SelectSingleNode("ThumbMediaId").InnerText;
+                info.ToUserName = ToUserName;
+                info.FromUserName = FromUserName;
+                info.MsgType = MsgType;
+                info.MediaId = MediaId;
+                info.ThumbMediaId = ThumbMediaId;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             return info;
         }
     }
@@ -167,13 +206,11 @@ namespace Mumu.Frameworks.Utility
             XmlElement root = doc.DocumentElement;
             string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
             string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
-            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;
             string MsgType = root.SelectSingleNode("MsgType").InnerText;
             string MediaId = root.SelectSingleNode("MediaId").InnerText;
             string ThumbMediaId = root.SelectSingleNode("ThumbMediaId").InnerText;
             info.ToUserName = ToUserName;
             info.FromUserName = FromUserName;
-            info.CreateTime = Convert.ToInt32(CreateTime);
             info.MsgType = MsgType;
             info.MediaId = MediaId;
             info.ThumbMediaId = ThumbMediaId;
@@ -209,7 +246,6 @@ namespace Mumu.Frameworks.Utility
             XmlElement root = doc.DocumentElement;
             string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
             string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
-            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;
             string MsgType = root.SelectSingleNode("MsgType").InnerText;
             string Location_X = root.SelectSingleNode("Location_X").InnerText;
             string Location_Y = root.SelectSingleNode("Location_Y").InnerText;
@@ -217,7 +253,6 @@ namespace Mumu.Frameworks.Utility
             string Label = root.SelectSingleNode("Label").InnerText;
             info.ToUserName = ToUserName;
             info.FromUserName = FromUserName;
-            info.CreateTime = Convert.ToInt32(CreateTime);
             info.MsgType = MsgType;
             info.Location_X = Location_X;
             info.Location_Y = Location_Y;
@@ -251,14 +286,12 @@ namespace Mumu.Frameworks.Utility
             XmlElement root = doc.DocumentElement;
             string ToUserName = root.SelectSingleNode("ToUserName").InnerText;
             string FromUserName = root.SelectSingleNode("FromUserName").InnerText;
-            string CreateTime = root.SelectSingleNode("CreateTime").InnerText;
             string MsgType = root.SelectSingleNode("MsgType").InnerText;
             string Title = root.SelectSingleNode("Title").InnerText;
             string Description = root.SelectSingleNode("Description").InnerText;
             string Url = root.SelectSingleNode("Url").InnerText;
             info.ToUserName = ToUserName;
             info.FromUserName = FromUserName;
-            info.CreateTime = Convert.ToInt32(CreateTime);
             info.MsgType = MsgType;
             info.Title = Title;
             info.Description = Description;

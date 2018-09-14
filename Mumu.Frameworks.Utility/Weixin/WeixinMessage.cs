@@ -31,24 +31,14 @@ namespace Mumu.Frameworks.Utility
     /// 回复微信文本消息
     /// </summary>
     public class WeixinTextMessage : BaseMessage
-    {
-        //public WeixinTextMessage()
-        //{
-        //    MsgType = EnumWeixinMsgType.text.ToString().ToLower();
-        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        //}
-        //public WeixinTextMessage(BaseMessage info) : this()
-        //{
-        //    this.FromUserName = info.FromUserName;
-        //    this.ToUserName = info.ToUserName;
-        //}
+    {       
         /// <summary>
         /// 文本消息内容
         /// </summary>
         public string Content { get; set; }
         public string ToXml()
         {
-            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", ToUserName, FromUserName, CreateTime, Content);
+            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{3}]]></Content></xml>", ToUserName, FromUserName, CreateTime, Content);
             return xml;
         }
     }
@@ -56,24 +46,14 @@ namespace Mumu.Frameworks.Utility
     /// 回复微信图片消息
     /// </summary>
     public class WeixinImageMessage : BaseMessage
-    {
-        //public WeixinImageMessage()
-        //{
-        //    MsgType = EnumWeixinMsgType.image.ToString().ToLower();
-        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        //}
-        //public WeixinImageMessage(BaseMessage info) : this()
-        //{
-        //    this.FromUserName = info.FromUserName;
-        //    this.ToUserName = info.ToUserName;
-        //}
+    {       
         /// <summary>
         /// 通过素材管理中的接口上传多媒体文件，得到的id。
         /// </summary>
         public string MediaId { get; set; }
         public string ToXml()
         {
-            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}] ]></FromUserName><CreateTime>{2}</CreateTime><MsgType>< ![CDATA[image] ]></MsgType><Image><MediaId>< ![CDATA[{3}]]></MediaId></Image></xml>", ToUserName, FromUserName, CreateTime, MediaId);
+            string xml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId><![CDATA[{3}]]></MediaId></Image></xml>", ToUserName, FromUserName, CreateTime, MediaId);
             return xml;
         }
     }
@@ -81,17 +61,7 @@ namespace Mumu.Frameworks.Utility
     /// 回复微信语音信息    ·
     /// </summary>
     public class WeixinVoiceMessage : BaseMessage
-    {
-        //public WeixinVoiceMessage()
-        //{
-        //    MsgType = EnumWeixinMsgType.voice.ToString().ToLower();
-        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        //}
-        //public WeixinVoiceMessage(BaseMessage info) : this()
-        //{
-        //    this.FromUserName = info.FromUserName;
-        //    this.ToUserName = info.ToUserName;
-        //}
+    {        
         /// <summary>
         /// 通过素材管理中的接口上传多媒体文件，得到的id
         /// </summary>
@@ -106,17 +76,7 @@ namespace Mumu.Frameworks.Utility
     /// 回复微信视频信息
     /// </summary>
     public class WeixinVideoMessage : BaseMessage
-    {
-        //public WeixinVideoMessage()
-        //{
-        //    MsgType = EnumWeixinMsgType.video.ToString().ToString();
-        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        //}
-        //public WeixinVideoMessage(BaseMessage info) : this()
-        //{
-        //    this.FromUserName = info.FromUserName;
-        //    this.ToUserName = info.ToUserName;
-        //}
+    {        
         /// <summary>
         /// 通过素材管理中的接口上传多媒体文件，得到的id
         /// </summary>
@@ -140,17 +100,7 @@ namespace Mumu.Frameworks.Utility
     /// </summary>
 
     public class WeixinMusicMessage : BaseMessage
-    {
-        //public WeixinMusicMessage()
-        //{
-        //    MsgType = EnumWeixinMsgType.music.ToString().ToLower();
-        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        //}
-        //public WeixinMusicMessage(BaseMessage info) : this()
-        //{
-        //    this.FromUserName = info.FromUserName;
-        //    this.ToUserName = info.ToUserName;
-        //}
+    {       
         /// <summary>
         /// 音乐标题
         /// </summary>
@@ -181,17 +131,7 @@ namespace Mumu.Frameworks.Utility
     /// 回复微信图文消息
     /// </summary>
     public class WeixinNewsMessage : BaseMessage
-    {
-        //public WeixinNewsMessage()
-        //{
-        //    MsgType = EnumWeixinMsgType.news.ToString().ToLower();
-        //    CreateTime = HttpHelper.ConvertDateTimeToInt(DateTime.Now);
-        //}
-        //public WeixinNewsMessage(BaseMessage info) : this()
-        //{
-        //    this.FromUserName = info.FromUserName;
-        //    this.ToUserName = info.ToUserName;
-        //}
+    {        
         /// <summary>
         /// 图文消息个数，限制为8条以内
         /// </summary>
