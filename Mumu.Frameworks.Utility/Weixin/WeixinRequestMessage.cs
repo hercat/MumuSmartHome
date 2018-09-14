@@ -103,7 +103,7 @@ namespace Mumu.Frameworks.Utility
             catch (Exception ex)
             {
                 throw ex;
-            }            
+            }
             return info;
         }
     }
