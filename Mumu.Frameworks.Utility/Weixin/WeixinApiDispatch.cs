@@ -196,6 +196,8 @@ namespace Mumu.Frameworks.Utility
                         case "click":
                             string key = root.SelectSingleNode("EventKey").InnerText;
                             log.Info("事件KEY值:" + key);
+                            //微信菜单点击事件处理
+                            WeixinMenuClickHandler(key);
                             break;
                         case "subscribe":
                             log.Info(string.Format("FromUserName:{0}关注成功！", FromUserName));
@@ -225,6 +227,21 @@ namespace Mumu.Frameworks.Utility
             string result = BitConverter.ToString(bytes_out);
             result = result.Replace("-", "").ToLower();
             return result;
+        }
+        /// <summary>
+        /// 微信菜单点击事件处理
+        /// </summary>
+        /// <param name="key"></param>
+        private void WeixinMenuClickHandler(string key)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

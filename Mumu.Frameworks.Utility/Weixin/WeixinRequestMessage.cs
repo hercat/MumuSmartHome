@@ -9,6 +9,7 @@ using System.Reflection;
 
 namespace Mumu.Frameworks.Utility
 {
+    #region 微信请求消息处理
     /// <summary>
     /// 微信请求基类消息
     /// </summary>
@@ -33,7 +34,7 @@ namespace Mumu.Frameworks.Utility
     /// 微信请求文本消息
     /// </summary>
     public class RequestText : BaseMessage
-    {        
+    {
         /// <summary>
         /// 文本消息内容
         /// </summary>
@@ -300,4 +301,12 @@ namespace Mumu.Frameworks.Utility
             return info;
         }
     }
+    #endregion
+
+    #region 微信事件处理
+
+
+
+    #endregion
+
 }

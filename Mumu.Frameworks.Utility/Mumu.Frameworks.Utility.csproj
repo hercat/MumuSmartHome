@@ -80,6 +80,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
@@ -101,6 +102,7 @@
     <Compile Include="AppConfigManager\AppConfigManager.cs" />
     <Compile Include="GenericMatrix\GenericMatrix.cs" />
     <Compile Include="HttpHelper\HttpHelper.cs" />
+    <Compile Include="MachineInfoHelper.cs" />
     <Compile Include="Weixin\WeixinMessage.cs" />
     <Compile Include="Weixin\WeixinApiDispatch.cs" />
     <Compile Include="Weixin\WeixinApiManager.cs" />
@@ -124,6 +126,9 @@
       <Project>{db6c4235-7f12-4a12-a1f8-a579983d5161}</Project>
       <Name>Mumu.Frameworks.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MachineInfoHelper\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -285,5 +285,15 @@ namespace WindowsFormsApplication1
         {            
             
         }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            IPAddress[] list = MachineInfoHelper.GetMachineIPAddress();
+            string ipv4 = list[1].ToString();
+            string ipv6 = list[0].ToString();
+
+            string mac = MachineInfoHelper.GetMachineMacAddress();
+            MachineInfoHelper.GetInternetIPAddress();
+        }
     }
 }
