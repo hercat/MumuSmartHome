@@ -31,10 +31,10 @@
       <publishTime>09/13/2018 15:43:20</publishTime>
     </File>
     <File Include="bin/Mumu.Frameworks.Utility.dll">
-      <publishTime>09/14/2018 10:37:38</publishTime>
+      <publishTime>09/14/2018 11:15:22</publishTime>
     </File>
     <File Include="bin/MumuHomeWechat.dll">
-      <publishTime>09/14/2018 10:37:43</publishTime>
+      <publishTime>09/14/2018 11:15:26</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -85,7 +85,7 @@
       <publishTime>09/03/2018 09:31:36</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/14/2018 10:37:55</publishTime>
+      <publishTime>09/14/2018 11:15:28</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>09/06/2018 14:50:05</publishTime>

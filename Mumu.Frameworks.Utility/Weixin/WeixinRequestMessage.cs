@@ -102,6 +102,7 @@ namespace Mumu.Frameworks.Utility
             }
             catch (Exception ex)
             {
+                //1168
                 throw ex;
             }
             return info;
