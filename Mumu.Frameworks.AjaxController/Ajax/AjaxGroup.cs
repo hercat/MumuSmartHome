@@ -12,7 +12,7 @@ using Mumu.Frameworks.LogicalOperation;
 namespace Mumu.Frameworks.AjaxController.Ajax
 {
     /// <summary>
-    /// 
+    /// 用户组信息Ajax控制层方法
     /// </summary>
     public class AjaxGroup
     {
@@ -113,11 +113,28 @@ namespace Mumu.Frameworks.AjaxController.Ajax
         /// <param name="rows"></param>
         /// <returns></returns>
         [Action]
-        public object GetGroupInfoList(string fields, string key, string order, string ascOrdesc, int page, int rows)
+        public object GetGroupInfoList(string fields, string key,string order,string ascOrdesc, int page, int rows)
         {
             try
             {
-
+                if (string.IsNullOrEmpty(fields))
+                    fields = "*";
+                PageInfo pageInfo = new PageInfo()
+                {
+                    PageIndex = (page - 1) * rows,
+                    PageSize = rows,
+                    RecCount = 0
+                };
+                string where = string.Empty;
+                if (!string.IsNullOrEmpty(key))
+                    where = string.Format("where name like '%{0}%' or description like '%{0}%' ", key);
+                string orderby = string.Format("order by {0} {1}", order, ascOrdesc);
+                string limit = string.Format("limit {0},{1}", pageInfo.PageIndex, pageInfo.PageSize);
+                List<GroupInfo> list = GroupOperation.GetGroupInfoListAll(fields, where);
+                pageInfo.RecCount = list.Count;
+                List<GroupInfo> target = GroupOperation.GetGroupInfoPageList(fields, where, orderby, limit);
+                GridResult<GroupInfo> result = new GridResult<GroupInfo>(target, pageInfo.RecCount);
+                return new JsonResult(result);
             }
             catch (Exception ex)
             {

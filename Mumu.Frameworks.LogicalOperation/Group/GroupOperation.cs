@@ -160,6 +160,36 @@ namespace Mumu.Frameworks.LogicalOperation
             return info;
         }
         /// <summary>
+        /// 获取全部用户分组信息
+        /// </summary>
+        /// <param name="fields"></param>
+        /// <param name="whereCondition"></param>
+        /// <returns></returns>
+        public static List<GroupInfo> GetGroupInfoListAll(string fields, string whereCondition)
+        {
+            List<GroupInfo> list = new List<GroupInfo>();
+            IDbConnection conn = null;
+            IDbCommand cmd = null;
+            IDbTransaction trans = null;
+            try
+            {
+                IGroup dp = DataProvider.DbGroupDP;
+
+            }
+            catch (Exception ex)
+            {
+                if (null != trans)
+                    trans.Rollback();
+                log.Error(string.Format("GetGroupInfoListAll()发生错误,错误信息如下:{0}", ex));
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Close();
+            }
+            return list;
+        }
+        /// <summary>
         /// 用户组信息分页获取
         /// </summary>
         /// <param name="fields">字段</param>
@@ -167,7 +197,7 @@ namespace Mumu.Frameworks.LogicalOperation
         /// <param name="startIndex">开始下标</param>
         /// <param name="pageSize">页面大小</param>
         /// <returns></returns>
-        public static List<GroupInfo> GetGroupInfoPageList(string fields, string whereCondition, int startIndex, int pageSize)
+        public static List<GroupInfo> GetGroupInfoPageList(string fields, string whereCondition, string orderby,string limit)
         {
             List<GroupInfo> list = new List<GroupInfo>();
             IDbConnection conn = null;
@@ -181,7 +211,7 @@ namespace Mumu.Frameworks.LogicalOperation
                 conn.Open();
                 trans = conn.BeginTransaction();
                 cmd.Transaction = trans;
-                list = dp.GetGroupInfoPageList(cmd, fields, whereCondition, startIndex, pageSize);
+                list = dp.GetGroupInfoPageList(cmd, fields, whereCondition, orderby, limit);
                 trans.Commit();
             }
             catch (Exception ex)

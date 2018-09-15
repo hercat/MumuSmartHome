@@ -21,3 +21,17 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\obj\Debug\MumuSmartHomeWebPortal.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.AjaxController.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.AjaxController.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.Entity.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.LogicalOperation.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\log4net.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.DatabaseInterface.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.Utility.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\ImageProcessor.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\MongoDB.Driver.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\ThoughtWorks.QRCode.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\MongoDB.Bson.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\MongoDB.Driver.Core.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.Entity.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.LogicalOperation.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.DatabaseInterface.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.Utility.pdb

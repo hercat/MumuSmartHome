@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="ConnString\ConnString.cs" />
     <Compile Include="EnumItems\EnumItems.cs" />
+    <Compile Include="PageInfo\GridResult.cs" />
     <Compile Include="GroupPermission\GroupPermission.cs" />
     <Compile Include="Group\GroupInfo.cs" />
+    <Compile Include="PageInfo\PageInfo.cs" />
     <Compile Include="SettingBase\MongodbSettingBase.cs" />
     <Compile Include="Permission\PermissionInfo.cs" />
     <Compile Include="RolePermission\RolePermission.cs" />

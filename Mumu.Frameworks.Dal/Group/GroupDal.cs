@@ -88,7 +88,34 @@ namespace Mumu.Frameworks.Dal
             return info;
         }
 
-        public List<GroupInfo> GetGroupInfoPageList(IDbCommand icmd, string fileds, string whereCondition, int startIndex, int pageSize)
+        public List<GroupInfo> GetGroupInfoListAll(IDbCommand icmd, string fields, string whereCondition)
+        {
+            icmd.Parameters.Clear();
+            MySqlCommand cmd = icmd as MySqlCommand;
+            cmd.CommandType = CommandType.Text;
+            StringBuilder sb = new StringBuilder();
+            if (!string.IsNullOrEmpty(fields))
+                sb.AppendFormat("select {0} from t_group_info ", fields);
+            if (!string.IsNullOrEmpty(whereCondition))
+                sb.AppendFormat("{0} ", whereCondition);            
+            cmd.CommandText = sb.ToString();
+            List<GroupInfo> list = new List<GroupInfo>();
+            DataTable dt = new DataTable();
+            dt.Load(cmd.ExecuteReader());
+            if (dt.Rows.Count > 0)
+            {
+                GroupInfo info = null;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    info = new GroupInfo();
+                    info.AllParse(dr);
+                    if (null != info)
+                        list.Add(info);
+                }
+            }
+            return list;
+        }
+        public List<GroupInfo> GetGroupInfoPageList(IDbCommand icmd, string fileds, string whereCondition,string orderby, string limit)
         {
             icmd.Parameters.Clear();
             MySqlCommand cmd = icmd as MySqlCommand;
@@ -98,7 +125,8 @@ namespace Mumu.Frameworks.Dal
                 sb.AppendFormat("select {0} from t_group_info ", fileds);
             if (!string.IsNullOrEmpty(whereCondition))
                 sb.AppendFormat("{0} ", whereCondition);
-            sb.AppendFormat("limit {0},{1}", startIndex, pageSize);
+            sb.AppendFormat("{0} ", orderby);
+            sb.AppendFormat("{0}",limit);
             cmd.CommandText = sb.ToString();
             List<GroupInfo> list = new List<GroupInfo>();
             DataTable dt = new DataTable();

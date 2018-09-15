@@ -17,17 +17,15 @@ body {
     z-index:9;
     clear:both;
 }
-.head_line {
-    /*background:url(/images/default/head_line.jpg);*/
+.head_line {    
     background:url(/images/new/head_line.jpg);
     height:4px;
 }
-.head {
-    /*background:url(/images/default/head_back.jpg);*/
+.head {    
     background:url(/images/new/head_back.jpg);
     padding:0px;
     height:80px;
-    border-bottom:1px solid #333;
+    border-bottom:1px solid #e1e1e1;
     margin-bottom:2px;
     padding-bottom:0;
 }
@@ -63,11 +61,11 @@ body {
     width:180px;
     float:left;
     margin-left:0px;
-    margin-top:0px;
-    /*background:#dce8ff repeat-x left top;*/
+    margin-top:0px;    
     background:#fcf9f9 repeat-x left top;
     border-right:#b8c8e5 2px solid;
     border-bottom:#b8c8e5 2px solid;
+    border-radius:6px;
 }
 .splitter {
     text-align:right;
@@ -75,12 +73,12 @@ body {
     font-weight:bold;
     cursor:pointer;
     line-height:32px;
-    /*background:url(/images/new/splitter.jpg);*/
-    background:#000000;
+    background:url(/images/new/splitter.jpg);
     color:#fff;
     padding-left:2px;
     padding-right:5px;
     margin-bottom:1px;
+    border-radius:5px;
 }
 .splitter img {
     vertical-align:middle;
@@ -92,8 +90,7 @@ body {
     margin-left:182px;
     _height:1em;
 }
-.footer {
-    /*background:url(../images/default/foot_bg.jpg);*/
+.footer {    
     background:url(/images/new/foot_bg.jpg);
     font-size:14px;
     min-width:996px;

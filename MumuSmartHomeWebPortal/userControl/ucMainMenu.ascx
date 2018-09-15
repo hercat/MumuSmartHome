@@ -20,8 +20,7 @@
         </div>
         <div class="menu_item_content">
             <ul>
-                <li><a href="#">用户组查询</a></li>
-                <li><a href="#">添加用户组</a></li>
+                <li><a href="../views/GroupInfoPage.aspx">用户组管理</a></li>
             </ul>
         </div>
     </div>
