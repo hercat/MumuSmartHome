@@ -65,7 +65,7 @@ namespace WindowsFormsApplication1
         private void Form1_Load(object sender, EventArgs e)
         {
             _connString = SystemSettingBase.CreateInstance().SysMySqlDB.ConnString;
-            ConnString.MySqldb = _connString;
+            ConnString.MySqldb = _connString;            
         }
         /// <summary>
         /// MD5加密测试
@@ -373,26 +373,33 @@ namespace WindowsFormsApplication1
         /// <param name="e"></param>
         private void button18_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ConnectionFactory factory = new ConnectionFactory("tcp://localhost:61616");
-                using (IConnection connection = factory.CreateConnection())
-                {
-                    connection.ClientId = "消费者1";
-                    connection.Start();
-                    using (ISession session = connection.CreateSession(AcknowledgementMode.AutoAcknowledge))
-                    {
-                        IMessageConsumer consumer = session.CreateDurableConsumer(new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic("demo"), "消费者1", null, false);
-                        consumer.Listener += new MessageListener(consumer_listener);
-                    }
-                    connection.Stop();
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            //try
+            //{
+            //    ConnectionFactory factory = new ConnectionFactory("tcp://localhost:61616");
+            //    using (IConnection connection = factory.CreateConnection())
+            //    {
+            //        connection.ClientId = "消费者1";
+            //        connection.Start();
+            //        using (ISession session = connection.CreateSession(AcknowledgementMode.AutoAcknowledge))
+            //        {
+            //            IMessageConsumer consumer = session.CreateDurableConsumer(new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic("demo"), "消费者1", null, false);
+            //            consumer.Listener += new MessageListener(consumer_listener);
+            //        }
+            //        connection.Stop();
+            //        connection.Close();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
+            string url = "tcp://localhost:61616";
+            string User = "";
+            string Pwd = "";
+            ActiveMQHelper helper = new ActiveMQHelper(url, User, Pwd);
+            helper.CreateFactory();
+            helper.SubscribeTopicMessage("test", "消费者1", "消费者1", AcknowledgementMode.AutoAcknowledge);
+            string message = helper.GetMessage();
         }
         private static void consumer_listener(IMessage message)
         {
@@ -414,24 +421,30 @@ namespace WindowsFormsApplication1
         /// <param name="e"></param>
         private void button19_Click(object sender, EventArgs e)
         {
-            try
-            {
-                IConnectionFactory factory = new ConnectionFactory("tcp://localhost:61616");
-                using (IConnection connection = factory.CreateConnection())
-                {
-                    using (ISession session = connection.CreateSession())
-                    {
-                        IMessageProducer producer = session.CreateProducer(new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic("demo"));
-                        ITextMessage message = producer.CreateTextMessage();
-                        message.Text = @"test message";
-                        producer.Send(message, Apache.NMS.MsgDeliveryMode.NonPersistent, Apache.NMS.MsgPriority.Normal, TimeSpan.MinValue);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            //try
+            //{
+            //    IConnectionFactory factory = new ConnectionFactory("tcp://localhost:61616");
+            //    using (IConnection connection = factory.CreateConnection())
+            //    {
+            //        using (ISession session = connection.CreateSession())
+            //        {
+            //            IMessageProducer producer = session.CreateProducer(new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic("demo"));
+            //            ITextMessage message = producer.CreateTextMessage();
+            //            message.Text = @"test message";
+            //            producer.Send(message, Apache.NMS.MsgDeliveryMode.NonPersistent, Apache.NMS.MsgPriority.Normal, TimeSpan.MinValue);
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
+            string url = "tcp://localhost:61616";
+            string User = "";
+            string Pwd = "";
+            ActiveMQHelper helper = new ActiveMQHelper(url, User, Pwd);
+            helper.CreateFactory();
+            helper.ProduceTopicMessage("test", "test", MsgDeliveryMode.NonPersistent, MsgPriority.Normal);            
         }
     }
 }

@@ -20,3 +20,5 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizproc
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizprocess\obj\Debug\Mumu.Frameworks.Bizprocess.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizprocess\obj\Debug\Mumu.Frameworks.Bizprocess.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizprocess\bin\Debug\ImageProcessor.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizprocess\bin\Debug\Apache.NMS.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\Mumu.Frameworks.Bizprocess\bin\Debug\Apache.NMS.ActiveMQ.dll

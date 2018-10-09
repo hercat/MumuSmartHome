@@ -28,3 +28,5 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeWechat\bin\Mumu
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeWechat\obj\Debug\MumuHomeWechat.csprojResolveAssemblyReference.cache
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeWechat\obj\Debug\MumuHomeWechat.dll
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeWechat\obj\Debug\MumuHomeWechat.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeWechat\bin\Apache.NMS.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeWechat\bin\Apache.NMS.ActiveMQ.dll

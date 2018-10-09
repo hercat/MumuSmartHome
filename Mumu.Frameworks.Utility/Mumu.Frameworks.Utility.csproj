@@ -99,9 +99,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveMQHelper\ActiveMQHelper.cs" />
     <Compile Include="AppConfigManager\AppConfigManager.cs" />
     <Compile Include="EMailHelper\EMailHelper.cs" />
-    <Compile Include="EmailTemplateHelper.cs" />
+    <Compile Include="EMailHelper\EmailTemplateHelper.cs" />
     <Compile Include="GenericMatrix\GenericMatrix.cs" />
     <Compile Include="HttpHelper\HttpHelper.cs" />
     <Compile Include="MachineInfoHelper\MachineInfoHelper.cs" />

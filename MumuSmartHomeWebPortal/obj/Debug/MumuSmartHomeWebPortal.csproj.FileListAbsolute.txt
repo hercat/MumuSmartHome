@@ -35,3 +35,5 @@ C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.LogicalOperation.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.DatabaseInterface.pdb
 C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Mumu.Frameworks.Utility.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Apache.NMS.dll
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuSmartHomeWebPortal\bin\Apache.NMS.ActiveMQ.dll
