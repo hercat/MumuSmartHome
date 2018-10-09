@@ -17,6 +17,11 @@ using System.Net;
 using System.IO;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using System.Net.Mail;
+using System.Collections.Specialized;
+using Apache.NMS;
+using Apache.NMS.ActiveMQ;
+using System.Threading;
 
 namespace WindowsFormsApplication1
 {
@@ -257,7 +262,7 @@ namespace WindowsFormsApplication1
         private void button13_Click(object sender, EventArgs e)
         {
             List<GroupInfo> list = new List<GroupInfo>();
-            list = GroupOperation.GetGroupInfoPageList("*", string.Empty, 1, 2);
+            //list = GroupOperation.GetGroupInfoPageList("*", string.Empty, 1, 2);
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -294,6 +299,139 @@ namespace WindowsFormsApplication1
 
             string mac = MachineInfoHelper.GetMachineMacAddress();
             MachineInfoHelper.GetInternetIPAddress();
+        }
+        /// <summary>
+        /// 发送邮件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button17_Click(object sender, EventArgs e)
+        {
+            #region
+            //MailAddress from = new MailAddress("wuwei038177@163.com");
+            //string messageTo = "1195230489@qq.com";
+            //string messageSubject = "测试邮件";
+            //string body = "测试邮件内容";
+            //Send(from, messageTo, messageSubject, body, "");
+            #endregion
+
+            NameValueCollection values = new NameValueCollection();
+            values.Add("name", "WUWEI");
+            values.Add("start", "2017-09-20");
+            values.Add("end", "2018-09-30");
+            values.Add("points", "10000");
+            string template = EmailTemplateHelper.ConstructTemplate("../EmailTemplate.txt", values);
+            EMailHelper helper = new EMailHelper();
+            helper.MailSmtpServer = "smtp.aliyun.com";
+            helper.MailCredential = "wuw_sh@aliyun.com";
+            helper.MailCredentialPwd = "wuwei038177";
+            string mailFrom = "wuw_sh@aliyun.com";
+            string mailTo = "1195230489@qq.com;";
+            string mailSubject = "模板邮件";
+            string mailCC = "wuwei038177@163.com;";
+            string result;
+            helper.SendSmtpMail(mailFrom, mailTo, mailSubject, template, "", "", mailCC, out result);
+        }
+        /// <summary>
+        /// 发送邮件
+        /// </summary>
+        /// <param name="MessageFrom"></param>
+        /// <param name="MessageTo"></param>
+        /// <param name="MessageSubject"></param>
+        /// <param name="MessageBody"></param>
+        /// <param name="SUpFile"></param>
+        /// <returns></returns>
+        private static bool Send(MailAddress MessageFrom, string MessageTo, string MessageSubject, string MessageBody, string SUpFile)
+        {
+            MailMessage message = new MailMessage();
+            message.From = MessageFrom;
+            message.To.Add(MessageTo); //收件人邮箱地址可以是多个以实现群发
+
+            message.Subject = MessageSubject;
+            message.Body = MessageBody;
+
+            message.IsBodyHtml = true; //是否为html格式
+            message.Priority = MailPriority.Normal; //发送邮件的优先等级
+            SmtpClient sc = new SmtpClient();
+            sc.Host = "smtp.163.com"; //指定发送邮件的服务器地址或IP
+            sc.Port = 25; //指定发送邮件端口
+            sc.Credentials = new System.Net.NetworkCredential("wuwei038177@163.com", "ww038177"); //指定登录服务器的
+            try
+            {
+                sc.Send(message); //发送邮件
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// MQ订阅测试
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button18_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ConnectionFactory factory = new ConnectionFactory("tcp://localhost:61616");
+                using (IConnection connection = factory.CreateConnection())
+                {
+                    connection.ClientId = "消费者1";
+                    connection.Start();
+                    using (ISession session = connection.CreateSession(AcknowledgementMode.AutoAcknowledge))
+                    {
+                        IMessageConsumer consumer = session.CreateDurableConsumer(new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic("demo"), "消费者1", null, false);
+                        consumer.Listener += new MessageListener(consumer_listener);
+                    }
+                    connection.Stop();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private static void consumer_listener(IMessage message)
+        {
+            try
+            {
+                ITextMessage msg = (ITextMessage)message;
+                string str = msg.Text;
+                MessageBox.Show(msg.Text, "信息");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        /// <summary>
+        /// MQ发布
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button19_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IConnectionFactory factory = new ConnectionFactory("tcp://localhost:61616");
+                using (IConnection connection = factory.CreateConnection())
+                {
+                    using (ISession session = connection.CreateSession())
+                    {
+                        IMessageProducer producer = session.CreateProducer(new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic("demo"));
+                        ITextMessage message = producer.CreateTextMessage();
+                        message.Text = @"test message";
+                        producer.Send(message, Apache.NMS.MsgDeliveryMode.NonPersistent, Apache.NMS.MsgPriority.Normal, TimeSpan.MinValue);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

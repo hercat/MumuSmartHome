@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Master</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="../bootstrap-3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" />
@@ -24,7 +24,7 @@
         <div class="header">
             <div class="head_line"></div>
             <div class="head">
-                <div class="head_left">
+                <div class="head_left">                
                     <span id="sysName"></span>
                 </div>
                 <div class="head_right"></div>

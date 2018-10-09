@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="javascript\jweixin-1.2.0.js" />
+    <Content Include="javascript\jweixin-1.4.0.js" />
     <Content Include="log4net.xml" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">

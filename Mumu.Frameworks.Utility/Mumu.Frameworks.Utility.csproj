@@ -100,9 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfigManager\AppConfigManager.cs" />
+    <Compile Include="EMailHelper\EMailHelper.cs" />
+    <Compile Include="EmailTemplateHelper.cs" />
     <Compile Include="GenericMatrix\GenericMatrix.cs" />
     <Compile Include="HttpHelper\HttpHelper.cs" />
-    <Compile Include="MachineInfoHelper.cs" />
+    <Compile Include="MachineInfoHelper\MachineInfoHelper.cs" />
+    <Compile Include="RegexMatchHelper\RegexMatchHelper.cs" />
     <Compile Include="Weixin\WeixinMessage.cs" />
     <Compile Include="Weixin\WeixinApiDispatch.cs" />
     <Compile Include="Weixin\WeixinApiManager.cs" />
@@ -127,9 +130,7 @@
       <Name>Mumu.Frameworks.Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MachineInfoHelper\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EmailTemplate</title>
+</head>
+<body>
+	<div style="background-color:#1aad19;border-radius:5px;color:#fff;font-size:16px;">
+        <div style="padding-top: 5px;padding-left: 4px;text-align: left;">
+			<p style="padding-left: 5px;">[$name]您好,</p>
+			<p style="padding-left: 30px;">
+				您在[$start]至[$end]注册木木之家会员，我们赠送您[$points]积分。
+			</p>
+			<p style="padding-left: 30px;">
+				感谢您的支持，祝您生活越快!
+			</p>
+			<p style="padding-left: 30px;">系统邮件，请勿回复！</p>
+			<br />
+		</div>
+    </div>
+</body>
+</html>

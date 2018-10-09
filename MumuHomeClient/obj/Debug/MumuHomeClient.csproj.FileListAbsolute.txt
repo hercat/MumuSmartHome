@@ -1,0 +1,9 @@
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeClient\bin\Debug\MumuHomeClient.exe.config
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeClient\bin\Debug\MumuHomeClient.exe
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeClient\bin\Debug\MumuHomeClient.pdb
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeClient\obj\Debug\MumuHomeClient.csprojResolveAssemblyReference.cache
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeClient\obj\Debug\MumuHomeClient.Form1.resources
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeClient\obj\Debug\MumuHomeClient.Properties.Resources.resources
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeClient\obj\Debug\MumuHomeClient.csproj.GenerateResource.Cache
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeClient\obj\Debug\MumuHomeClient.exe
+C:\工作\SourceCode\MumuSmartHome\MumuSmartHomeSolution\MumuHomeClient\obj\Debug\MumuHomeClient.pdb

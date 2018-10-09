@@ -1,7 +1,7 @@
 ﻿@charset 'utf-8';
 body {
     font-family:'Microsoft YaHei','Trebuchet MS','Lucida Bright' sans-serif 'Lucida Sans Unicode','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background:url(/images/default/loading_background.png);
+    background:#fff;/*url(/images/default/loading_background.png);*/
     color:#333;
     font:normal 62.5% Verdana,Arial,Helvetica,sans-serif,'宋体';
     width:100%;
@@ -101,4 +101,9 @@ body {
     clear:both;
     color:#fff;
 }
+.title {
 
+}
+.body {
+
+}

@@ -21,6 +21,22 @@
         <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="获取微信服务器IP地址" />
     
+        <br />
+        <br />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="获取用户信息" />
+        <br />
+        <br />
+        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="批量获取用户信息" />
+    
+        <br />
+        <br />
+        <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="获取用户列表" />
+    
+        <br />
+        <br />
+        <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="发送模板消息" />
+        <br />
+    
     </div>
     </form>
 </body>

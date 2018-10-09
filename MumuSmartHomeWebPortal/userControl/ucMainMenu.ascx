@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucMainMenu.ascx.cs" Inherits="MumuSmartHomeWebPortal.userControl.ucMainMenu" %>
-<link href="../css/MainMenu.css" rel="stylesheet" />
+<link href="../css/mainMenu.css" rel="stylesheet" />
 <script src="../js/mainMenu.js"></script>
 
 <div class="nav">

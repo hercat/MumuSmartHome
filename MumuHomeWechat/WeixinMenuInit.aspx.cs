@@ -118,5 +118,72 @@ namespace MumuHomeWechat
             WeixinApiManager manager = new WeixinApiManager(WeixinConfig.WXAPPID, WeixinConfig.WXAPPSECRET);
             string menu = manager.GetWeixinMenu();
         }
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            WeixinApiManager manager = new WeixinApiManager(WeixinConfig.WXAPPID, WeixinConfig.WXAPPSECRET);
+            string info = manager.GetUserInfoByOpenID("obM2L1QRTBh7JS1d-9XUHTIbFukk");
+        }
+        /// <summary>
+        /// 微信openid列表获取微信用户信息列表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            string ulist = "{\"user_list\": [{\"openid\": \"obM2L1QRTBh7JS1d-9XUHTIbFukk\", \"lang\": \"zh_CN\"}, {\"openid\": \"obM2L1QRTBh7JS1d-9XUHTIbFukk\", \"lang\": \"zh_CN\"}]}";
+            WeixinApiManager manager = new WeixinApiManager(WeixinConfig.WXAPPID, WeixinConfig.WXAPPSECRET);
+            string list = manager.GetUserInfoList(ulist);
+        }
+        /// <summary>
+        /// 从某微信openid获取微信用户列表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            WeixinApiManager manager = new WeixinApiManager(WeixinConfig.WXAPPID, WeixinConfig.WXAPPSECRET);
+            string list = manager.GetUserList("obM2L1QRTBh7JS1d-9XUHTIbFukk");
+        }
+        /// <summary>
+        /// 发送模板消息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            string msg = "{" +
+                            "\"touser\":\"obM2L1U1H2O4IY2Ku6T0nGA1AQJA\"," +
+                            "\"template_id\":\"Fxfhyg8PcYKjnvwyQOUNpK2yF-KZWbRwf4QIQLVV7EA\"," +
+                            "\"data\":{" +
+                                "\"title\": {" +
+                                    "\"value\":\"平台推送消息\"," +
+                                        "\"color\":\"#173177\"" +
+                                    "}," +
+                                    "\"id\":{" +
+                                    "\"value\":\"201810030001\"," +
+                                        "\"color\":\"#173177\"" +
+                                    "}," +
+                                    "\"time\": {" +
+                                    "\"value\":\""+DateTime.Now+"\"," +
+                                        "\"color\":\"#173177\"" +
+                                    "}," +
+                                    "\"message\": {" +
+                                    "\"value\":\"平台推送消息内容部分\"," +
+                                        "\"color\":\"#173177\"" +
+                                    "}," +
+                                    "\"charger\":{" +
+                                    "\"value\":\"WUWEI\"," +
+                                        "\"color\":\"#173177\"" +
+                                    "}" +
+                            "}" +
+                        "}";
+            WeixinApiManager manager = new WeixinApiManager(WeixinConfig.WXAPPID, WeixinConfig.WXAPPSECRET);
+            manager.SendTemplateMessage(msg);
+        }
     }
 }

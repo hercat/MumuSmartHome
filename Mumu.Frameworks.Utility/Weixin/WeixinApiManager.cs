@@ -192,5 +192,54 @@ namespace Mumu.Frameworks.Utility
             string result = HttpHelper.HttpGet(url);
             return result;
         }
+        /// <summary>
+        /// 获取微信用户信息
+        /// </summary>
+        /// <param name="openId">用户微信id</param>
+        /// <returns></returns>
+        public string GetUserInfoByOpenID(string openId)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/user/info?access_token={0}&openid={1}&lang=zh_CN", access_token, openId);
+            string result = HttpHelper.HttpGet(url);
+            return result;
+        }
+        /// <summary>
+        /// 获取微信用户信息列表
+        /// </summary>
+        /// <param name="ulist">{\"user_list\": [{\"openid\": \"obM2L1QRTBh7JS1d-9XUHTIbFukk\", \"lang\": \"zh_CN\"}, {\"openid\": \"obM2L1QRTBh7JS1d-9XUHTIbFukk\", \"lang\": \"zh_CN\"}]}</param>
+        /// <returns></returns>
+        public string GetUserInfoList(string ulist)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token={0}", access_token);
+            string result = HttpHelper.HttpPost(url, ulist);
+            return result;
+        }
+        /// <summary>
+        /// 获取微信用户列表
+        /// </summary>
+        /// <param name="openId">next_openid</param>
+        /// <returns></returns>
+        public string GetUserList(string openId)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/user/get?access_token={0}&next_openid={1}", access_token, openId);
+            string result = HttpHelper.HttpGet(url);
+            return result;
+        }
+        /// <summary>
+        /// 发送模板消息
+        /// </summary>
+        /// <param name="opendId"></param>
+        /// <param name="templateMsg"></param>
+        /// <returns></returns>
+        public string SendTemplateMessage(string opendId,string templateMsg)
+        {
+            string access_token = GetAccessToken();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={0}", access_token);
+            string result = HttpHelper.HttpPost(url, templateMsg);
+            return result;
+        }
     }
 }
