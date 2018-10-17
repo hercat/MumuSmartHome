@@ -28,6 +28,7 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         private static string _connString;
+        ActiveMQHelper helper;
         public Form1()
         {
             InitializeComponent();
@@ -65,7 +66,13 @@ namespace WindowsFormsApplication1
         private void Form1_Load(object sender, EventArgs e)
         {
             _connString = SystemSettingBase.CreateInstance().SysMySqlDB.ConnString;
-            ConnString.MySqldb = _connString;            
+            ConnString.MySqldb = _connString;
+
+            string url = "tcp://localhost:61616";
+            string User = "";
+            string Pwd = "";
+            helper = new ActiveMQHelper(url, User, Pwd);
+            helper.CreateFactory();
         }
         /// <summary>
         /// MD5加密测试
@@ -373,6 +380,7 @@ namespace WindowsFormsApplication1
         /// <param name="e"></param>
         private void button18_Click(object sender, EventArgs e)
         {
+            #region
             //try
             //{
             //    ConnectionFactory factory = new ConnectionFactory("tcp://localhost:61616");
@@ -393,13 +401,18 @@ namespace WindowsFormsApplication1
             //{
             //    throw ex;
             //}
-            string url = "tcp://localhost:61616";
-            string User = "";
-            string Pwd = "";
-            ActiveMQHelper helper = new ActiveMQHelper(url, User, Pwd);
-            helper.CreateFactory();
-            helper.SubscribeTopicMessage("test", "消费者1", "消费者1", AcknowledgementMode.AutoAcknowledge);
-            string message = helper.GetMessage();
+            #endregion
+
+
+            helper.SubscribeTopicMessage("ods_t2001_flg_cs", "消费者1", "消费者1", AcknowledgementMode.AutoAcknowledge);
+            string ods_t2001_flg_cs = helper.GetMessage();
+
+            helper.SubscribeTopicMessage("demo", "消费者2", "消费者2", AcknowledgementMode.AutoAcknowledge);
+            string ods_flight_new = helper.GetMessage();
+
+            //helper.SubscribeQueueMessage("QUEUE.UPLOAD.DKH");
+            //string message = helper.GetMessage();
+            //helper.ResetMessage();
         }
         private static void consumer_listener(IMessage message)
         {
@@ -421,6 +434,7 @@ namespace WindowsFormsApplication1
         /// <param name="e"></param>
         private void button19_Click(object sender, EventArgs e)
         {
+            #region
             //try
             //{
             //    IConnectionFactory factory = new ConnectionFactory("tcp://localhost:61616");
@@ -439,12 +453,16 @@ namespace WindowsFormsApplication1
             //{
             //    throw ex;
             //}
-            string url = "tcp://localhost:61616";
-            string User = "";
-            string Pwd = "";
-            ActiveMQHelper helper = new ActiveMQHelper(url, User, Pwd);
-            helper.CreateFactory();
-            helper.ProduceTopicMessage("test", "test", MsgDeliveryMode.NonPersistent, MsgPriority.Normal);            
+            #endregion
+
+            string ods_t2001_flg_cs = "[{\"change_before\":\"\",\"change_after\":\"C\",\"mq_send_time \":\"2016-08-101:12:00\",\"commit_time\":\"2016-08-04 10:10:29.0\",\"flight_id\":\"1249761\"}]";
+            helper.ProduceTopicMessage("ods_t2001_flg_cs", ods_t2001_flg_cs, MsgDeliveryMode.NonPersistent, MsgPriority.Normal);
+
+            string ods_flight_new = "[{\"mq_send_time\":\"2016-08-10 11:12:00\",\"commit_time\":\"2016-08-04 10:10:29.0\",\"flight_id\":\"1249761\"}]";
+            helper.ProduceTopicMessage("ods_flight_new", ods_flight_new, MsgDeliveryMode.NonPersistent, MsgPriority.Normal);
+
+            string ods_flight_update = "[{\"mq_send_time\":\"2016-08-10 11:12:00\",\"change_columns\":\"vip@@fpl_div_airport1@@fpl_div_airport2\",\"commit_time\":\"2016-08-04 10:10:29.0\",\"flight_id\":\"1249761\"}]";
+            helper.ProduceTopicMessage("ods_flight_update", ods_flight_update, MsgDeliveryMode.NonPersistent, MsgPriority.Normal);         
         }
     }
 }
